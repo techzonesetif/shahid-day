@@ -49,7 +49,7 @@ console.log()
 
 import { useParams,useLocation   } from "react-router-dom"
 
- function Article_preview({data}){
+ function Article_preview(){
 
   const  link = useParams().link;
   // const loadedRef = useRef(false);
@@ -58,7 +58,7 @@ import { useParams,useLocation   } from "react-router-dom"
 
 
   useEffect(()=>{
-console.log(link)
+console.log(location)
   })
   return(
    
@@ -109,8 +109,8 @@ console.log(link)
             <span> 12/04/2025</span>
         </div>
         <Link to={`/article/123`} className={style.button}>
-      read more      
-      </Link>
+            read more      
+        </Link>
 </div>
       </>
       }
