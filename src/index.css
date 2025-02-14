@@ -1,7 +1,5 @@
-*{
-  margin: 0;
-  padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -22,6 +20,8 @@
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
+  font-family: "Red Hat Display", serif;
+
   
 }
  *::selection{

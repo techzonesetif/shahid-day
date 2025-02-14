@@ -46,12 +46,14 @@ console.log()
   )
 }
 
+
 import { useParams,useLocation   } from "react-router-dom"
 
-export function Article_preview({data}){
+ function Article_preview({data}){
 
   const  link = useParams().link;
-  const loadedRef = useRef(false);
+  // const loadedRef = useRef(false);
+  const location =useLocation()
   const [isLoaded, setIsLoaded] = useState(false);
 
 
@@ -78,13 +80,49 @@ console.log(link)
         e.currentTarget.onerror=null;
       }}
        className={style.preview_img} />
+               <h1> يوم الشهيد {link}</h1>
       <div className={style.preview_body}>
-      <h1> test {link}</h1>
-      <p>Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit.</p>
+        <div className={style.listag}>
+          <span>shaid</span>
+          <span>shaid</span>
+          <span>shaid</span>
+          </div>
+        
+        <p className={style.preview_text}>
+            Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+          Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit.
+        </p>
+
       </div>  
-      </>}
+      <div className={style.preview_footer}>
+      
+      <div  className={style.article__author}>
+            {/* <img loading="lazy"  src='/6348321.jpg'   className={style.author__avatar} />  */}
+            <h4>
+            by:  mounir habbas
+            </h4>
+            <span> 12/04/2025</span>
+        </div>
+        <Link to={`/article/123`} className={style.button}>
+      read more      
+      </Link>
+</div>
+      </>
+      }
       
       </main>
   )
 }
+
+import PropTypes from 'prop-types';
+Card.propTypes = {
+  data: PropTypes.any, 
+};
+Article_preview.propTypes = {
+  data: PropTypes.any, 
+};
