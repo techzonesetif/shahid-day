@@ -1,4 +1,5 @@
 import style from './page.module.css'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   return (
@@ -26,18 +27,26 @@ function Header() {
       <div className={style["navbar"]}>
         <button className={style["menu-toggle"]} aria-label="Toggle navigation menu"></button>
         <div className={style["site-logo"]}>
-          <p className={style["logo"]}>ALGERIAN HISTORY</p>
+          <Link to={'/'}>
+            <p className={style["logo"]}>ALGERIAN HISTORY</p>
+          </Link>
         </div>
         <nav>
           <ul className={style["nav-list"]}>
             <li className={style["nav-item"]}>
-              <h2>Learn About</h2>
+              <Link to={''}>
+                <h2>Learn About</h2>
+              </Link>
             </li>
             <li className={style["nav-item"]}>
-              <h2>Remember</h2>
+              <Link to={''}>
+                <h2>Remember</h2>
+              </Link>
             </li>
             <li className={style["nav-item"]}>
-              <h2>Confront</h2>
+              <Link to={''}>
+                <h2>Confront</h2>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -49,8 +58,7 @@ function Header() {
 function HeroSection() {
   return (
     <section 
-      className={style["hero"]} 
-      onClick={() => window.open('#', '_blank')}
+      className={style["hero"]}
       title="Learn more about Auschwitz">
       <h2>WHAT WAS AUSCHWITZ?</h2>
       <p>The most infamous site of Nazi genocide was liberated 80 years ago</p>
