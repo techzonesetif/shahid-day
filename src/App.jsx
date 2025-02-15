@@ -1,13 +1,14 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import ArticlesPage from './pages/articles/page'
+import Home from './pages/home/page'
 
 function App() {
 
   return (
     <>
           <Routes>
-            <Route path='/' element={<div/>}/>
+            <Route path='/' element={<Home/>}/>
             <Route path='/article' element={<ArticlesPage/>}/>
             <Route path='/article/:link' element={<ArticlesPage/>}/>
           </Routes>

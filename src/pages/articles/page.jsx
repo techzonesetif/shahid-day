@@ -42,7 +42,7 @@ console.log()
     <p>Lorem ipsum dolor sit amet,
     consectetur adipiscing elit.</p>
     </div>
-</Link>
+    </Link>
   )
 }
 
