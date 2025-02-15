@@ -26,32 +26,18 @@ function Header() {
       <div className={style["navbar"]}>
         <button className={style["menu-toggle"]} aria-label="Toggle navigation menu"></button>
         <div className={style["site-logo"]}>
-          <img className={style["logo"]} src="image.png" alt="Site Logo" />
+          <p className={style["logo"]}>ALGERIAN HISTORY</p>
         </div>
-        <label className={style["switch"]}>
-          <div className={style["round"]}>
-            <input className={style["btn-input"]} name="onoff" id="onoff" type="checkbox" />
-            <div className={style["back"]}>
-              <label htmlFor="onoff" className={style["but"]}>
-                <span className={style.on}>0</span>
-                <span className={style.off}>I</span>
-              </label>
-            </div>
-          </div>
-        </label>
         <nav>
           <ul className={style["nav-list"]}>
             <li className={style["nav-item"]}>
               <h2>Learn About</h2>
-              <p>THE HOLOCAUST</p>
             </li>
             <li className={style["nav-item"]}>
               <h2>Remember</h2>
-              <p>SURVIVORS AND VICTIMS</p>
             </li>
             <li className={style["nav-item"]}>
               <h2>Confront</h2>
-              <p>GENOCIDE | ANTISEMITISM</p>
             </li>
           </ul>
         </nav>
