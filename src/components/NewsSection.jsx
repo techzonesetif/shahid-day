@@ -1,27 +1,35 @@
 import style from '../pages/home/page.module.css'
+import NewsCard from './UI/NewsCard';
 
 function NewsSection() {
+
+  const cardDate = {
+    card1: {
+      title: "Featured",
+      discreption: "United states holocaust memorial museum condemns misuse of holocaust in public discourse",
+      date:"November 8, 2024"
+    },
+    card2: {
+      title: "Featured",
+      discreption: "Museum strongly condemns antisemitic attacks in amsterdam<",
+      date:"November 8, 2024"
+    },
+    card3: {
+      title: "Featured",
+      discreption: "Museum calls on colleges and universities to address rising antisemitism on campuses",
+      date:"April 22, 2024"
+    }
+  }
+
   return (
     <section className={style["news"]}>
-      <h2>NEWS</h2>
+      <h2>News</h2>
       <div className={style["news-grid"]}>
-        <div className={style["news-card"]}>
-          <h3 className={style["news-title"]}>FEATURED</h3>
-          <p>UNITED STATES HOLOCAUST MEMORIAL MUSEUM CONDEMNS MISUSE OF HOLOCAUST IN PUBLIC DISCOURSE</p>
-          <span className={style["news-date"]}>November 8, 2024</span>
-        </div>
-        <div className={style["news-card"]}>
-          <h3 className={style["news-title"]}>FEATURED</h3>
-          <p>MUSEUM STRONGLY CONDEMNS ANTISEMITIC ATTACKS IN AMSTERDAM</p>
-          <span className={style["news-date"]}>November 8, 2024</span>
-        </div>
-        <div className={style["news-card"]}>
-          <h3 className={style["news-title"]}>FEATURED</h3>
-          <p>MUSEUM CALLS ON COLLEGES AND UNIVERSITIES TO ADDRESS RISING ANTISEMITISM ON CAMPUSES</p>
-          <span className={style["news-date"]}>April 22, 2024</span>
-        </div>
+        <NewsCard {...cardDate.card1} />
+        <NewsCard {...cardDate.card2} />
+        <NewsCard {...cardDate.card3} />
       </div>
-      <a href="#" className={style["show-more"]}>SHOW MORE NEWS STORIES</a>
+      <a href="#" className={style["show-more"]}>Show More News Stories</a>
     </section>
   )
 }
