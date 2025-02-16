@@ -1,6 +1,12 @@
 import style from './page.module.css'
-import { Link } from 'react-router-dom'
-import testImg from '../../assets/test.png'
+import Header from '../../components/Header'
+import HeroSection from '../../components/HeroSection'
+import ImageGallery from '../../components/ImageGallery'
+import Footer from '../../components/Footer'
+import NewsSection from '../../components/NewsSection'
+import EventSection from '../../components/EventSection'
+import CollectionsSection from '../../components/CollectionsSection'
+
 
 export default function Home() {
   return (
@@ -9,7 +15,7 @@ export default function Home() {
       <HeroSection />
       <ImageGallery />
       <hr />
-      <EventsSection />
+      <EventSection />
       <CollectionsSection />
       <NewsSection />
       <Footer />
@@ -17,71 +23,6 @@ export default function Home() {
   )
 }
 
-
-
-function Header() {
-  return (
-    <header>
-      <div className={style["navbar"]}>
-        <button className={style["menu-toggle"]} aria-label="Toggle navigation menu"></button>
-        <div className={style["site-logo"]}>
-          <Link to={'/'}>
-            <p className={style["logo"]}>ALGERIAN HISTORY</p>
-          </Link>
-        </div>
-        <nav>
-          <ul className={style["nav-list"]}>
-            <li className={style["nav-item"]}>
-              <Link to={''}>
-                <h2>Learn About</h2>
-              </Link>
-            </li>
-            <li className={style["nav-item"]}>
-              <Link to={''}>
-                <h2>Remember</h2>
-              </Link>
-            </li>
-            <li className={style["nav-item"]}>
-              <Link to={''}>
-                <h2>Confront</h2>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-  )
-}
-
-function HeroSection() {
-  return (
-    <section 
-      className={style["hero"]}
-      title="Learn more about Auschwitz">
-      <h2>WHAT WAS AUSCHWITZ?</h2>
-      <p>The most infamous site of Nazi genocide was liberated 80 years ago</p>
-    </section>
-  )
-}
-
-function ImageGallery() {
-  return (
-    <section className={style["image-gallery"]}>
-      <div className={style["gallery-item"]}>
-        <img src="https://www.echoroukonline.com/wp-content/uploads/2024/09/alge.jpg" alt="Historical Image 1" />
-        <div className={style["caption"]}>ENCYCLOPEDIA</div>
-      </div>
-      <div className={style["gallery-item"]}>
-        <img src="https://www.aps.dz/ar/media/k2/items/cache/ac3dda62a5e727438153e6342070c176_M.jpg" alt="Historical Image 2" />
-        <div className={style["caption"]}>INTRODUCTION TO THE HOLOCAUST</div>
-      </div>
-      <div className={style["gallery-item"]}>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_61gHjdi9bzC-XUs-s_djvojLayowacsM2Q&s" alt="Historical Image 3" />
-        <div className={style["caption"]}>RESOURCES FOR EDUCATORS</div>
-      </div>
-    </section>
-  )
-}
 
 // Unused
 function VisitSection() {
@@ -136,92 +77,6 @@ function VisitSection() {
           <a href="#" className={style["map-link"]}>View Map</a>
         </p>
       </div>
-    </section>
-  )
-}
-
-function EventsSection() {
-  return (
-    <section className={style["events"]}>
-      <h2>NATIONAL EVENTS</h2>
-      <div className={style["events-grid"]}>
-        <div className={style["event-card"]}>
-          <img src={testImg} alt="Event image" />
-          <div className={style["event-content"]}>
-            <h3>2025 First Person Series: Joël Nommick</h3>
-            <p>THIS EVENT WILL BE LIVESTREAMED. LOOP ALL ET</p>
-          </div>
-        </div>
-        <div className={style["event-card"]}>
-          <img src={testImg} alt="Event image" />
-          <div className={style["event-content"]}>
-            <h3>2025 New York Next Generation Event</h3>
-            <p>NEW YORK, NY • 6:20 P.M. ET</p>
-          </div>
-        </div>
-        <div className={style["event-card"]}>
-          <img src={testImg} alt="Event image" />
-          <div className={style["event-content"]}>
-            <h3>Surviving the Holocaust Together</h3>
-            <p>WASHINGTON, DC • 6:20 P.M. ET</p>
-          </div>
-        </div>
-        <div className={style["event-card"]}>
-          <img src={testImg} alt="Event image" />
-          <div className={style["event-content"]}>
-            <h3>How Holocaust Education Is Shaping the Future of Military Leadership</h3>
-            <p>GLOBECE, IL • 7:20 P.M. ET</p>
-          </div>
-        </div>
-      </div>
-      <a href="#" className={style["view-events"]} target="_blank" rel="noopener noreferrer">
-        FOR MORE EVENTS
-      </a>
-    </section>
-  )
-}
-
-function CollectionsSection() {
-  return (
-    <section className={style["collections"]}>
-      <div className={style["collections-container"]}>
-        <div className={style["image-column"]}>
-          <img src="collectionssearch.webp" alt="Collection Preview" />
-        </div>
-        <div className={style["content-column"]}>
-          <h2>SEARCH OUR COLLECTIONS</h2>
-          <p>The Museums collections database contains more than 270,000 records, including:</p>
-          <ul className={style["collection-list"]}>
-            <li>Photos and albums - Images of life before, during and after the Holocaust</li>
-            <li>Personal stories - Interviews, home movies, memoirs, and diaries</li>
-            <li>Films - Historical footage and contemporary films about the Holocaust</li>
-          </ul>
-          <button className={style["collection-btn"]}>Explore Collections</button>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function NewsSection() {
-  return (
-    <section className={style["news"]}>
-      <h2>NEWS</h2>
-      <div className={style["news-grid"]}>
-        <div className={style["news-card"]}>
-          <h3>FEATURED</h3>
-          <p>UNITED STATES HOLOCAUST MEMORIAL MUSEUM CONDEMNS MISUSE OF HOLOCAUST IN PUBLIC DISCOURSE</p>
-        </div>
-        <div className={style["news-card"]}>
-          <p>MUSEUM STRONGLY CONDEMNS ANTISEMITIC ATTACKS IN AMSTERDAM</p>
-          <span className={style["news-date"]}>November 8, 2024</span>
-        </div>
-        <div className={style["news-card"]}>
-          <p>MUSEUM CALLS ON COLLEGES AND UNIVERSITIES TO ADDRESS RISING ANTISEMITISM ON CAMPUSES</p>
-          <span className={style["news-date"]}>April 22, 2024</span>
-        </div>
-      </div>
-      <a href="#" className={style["show-more"]}>SHOW MORE NEWS STORIES</a>
     </section>
   )
 }
@@ -285,39 +140,5 @@ function ContactSection() {
         </div>
       </div>
     </section>
-  )
-}
-
-function Footer() {
-  return (
-    <footer>
-      <div className={style["footer-top"]}>
-        <div className={style["footer-left"]}>
-          <img src="image.png" alt="Museum Logo" className={style["footer-logo"]} />
-          <div className={style["footer-address"]}>
-            <p>100 Raoul Wallenberg Place, SW</p>
-            <p>Washington, DC 20024-2126</p>
-            <p>Main telephone: 202.488.0400</p>
-            <p>TTY: 202.488.0406</p>
-          </div>
-        </div>
-        <div className={style["newsletter"]}>
-          <h4>Get the Latest News</h4>
-          <div className={style["email-submit"]}>
-            <input type="text" name="text" className={style["input"]} placeholder="Type your email" />
-            <button className={style["subscribe-btn"]}>Submit</button>
-          </div>
-        </div>
-      </div>
-      <hr className={style["footer-divider"]} />
-      <div className={style["footer-bottom"]}>
-        <a href="#">About the Museum</a>
-        <a href="#">Contact the Museum</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Privacy</a>
-        <a href="#">Accessibility</a>
-        <a href="#">Legal</a>
-      </div>
-    </footer>
   )
 }
