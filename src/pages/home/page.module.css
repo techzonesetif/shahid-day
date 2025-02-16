@@ -2,6 +2,8 @@
 
 /* Define CSS variables (from File 2) */
 :root {
+  --primary-color: #40a788;
+  --primary-color-hover: #47c7a1;
   --side-bar-width: 50vw;
   --padding: 10px;
   --s: 50px;
@@ -52,7 +54,7 @@ body {
   font-weight: 700;
   cursor: pointer;
   margin-left: 30px;
-  color: #40a788de;
+  color: var(--primary-color);
 }
 
 .site-logo img {
@@ -90,7 +92,7 @@ body {
 }
 
 .nav-item:hover {
-  color: #40a788de;
+  color: var(--primary-color);
 }
 
 /* ----- Mobile Menu ----- */
@@ -218,14 +220,14 @@ body {
 }
 
 .schedule-link {
-  color: #40a788de;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: bold;
 }
 
 .schedule-link:hover {
   color: #fff;
-  background: #40a788de;
+  background: var(--primary-color);
   padding: 2px;
 }
 
@@ -289,16 +291,24 @@ body {
 
 .event-card:hover h3,
 .event-card:hover p {
-  color: #40a788de;
+  color: var(--primary-color);
 }
 
 .view-events {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
   display: inline-block;
-  color: #40a788de;
+  color: #333;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.view-events:hover {
+  color: #f8f8f8;
+  background-color: var(--primary-color);
 }
 
 /* ----- Collections Section ----- */
@@ -362,19 +372,23 @@ body {
 }
 
 .collection-btn {
-  background: #28282d8c;
+  background: var(--primary-color);
   color: #f0f0f0;
   padding: 12px 25px;
   border: none;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .collection-btn:hover {
-  background: #40a788de;
+  background: var(--primary-color-hover);
+}
+
+.collection-btn:active {
+  background: var(--primary-color);
 }
 
 /* ----- Contact Section ----- */
@@ -443,6 +457,10 @@ body {
   border-radius: 8px;
   text-align: left;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .news-card h3 {
@@ -467,31 +485,35 @@ body {
 }
 
 .show-more {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
   display: inline-block;
-  color: #40a788de;
+  color: #333;
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .news-card:hover {
-  border-color: #40a788de;
+  border-color: var(--primary-color);
 }
 
 .news-card:hover p,
 .news-card:hover h3 {
-  color: #40a788de;
+  color: var(--primary-color);
 }
 
 .show-more:hover {
-  color: #004499;
+  color: #f8f8f8;
+  background-color: var(--primary-color);
 }
 
 /* ----- Footer Section ----- */
 footer {
-  background: #40a788de;
-  color: #f5f5f5;
+  background: #eee;
+  color: #121212;
   padding: 40px 20px;
   font-family: 'Cairo', sans-serif;
   position: relative;
@@ -510,92 +532,64 @@ footer {
   flex: 1;
 }
 
-.footer-logo {
-  width: 200px;
+.logo-footer {
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
 .footer-address p {
+  text-align: left;
   margin: 5px 0;
-  color: #666;
+  color: #121212;
   font-size: 0.9rem;
-}
-
-.newsletter {
-  flex: 1;
-  max-width: 400px;
-}
-
-.newsletter h4 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.email-submit {
-  display: flex;
-  gap: 10px;
-}
-
-.input {
-  background-color: #e0e0e0;
-  border: none;
-  margin: 0;
-  padding: 0;
-  color: #333;
-  outline: none;
-  height: 30px;
-  font-size: 17px;
-  text-align: center;
-  transition: all 0.5s;
-  max-width: 190px;
-  font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.input:hover,
-.input:focus {
-  background-color: #f1e8e8;
-}
-
-.subscribe-btn {
-  background: #28282d8c;
-  color: #f0f0f0;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.subscribe-btn:hover {
-  background: #40a788de;
 }
 
 .footer-divider {
-  border-color: #aaa;
-  margin: 30px auto;
+  border-color: #eee;
+  margin: 20px auto;
   max-width: 1200px;
 }
 
-.footer-bottom {
+.footer-right {
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 100px;
   flex-wrap: wrap;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
-.footer-bottom a {
-  color: #666;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s ease;
+.footer-right ul {
+  text-align: left;
+  list-style-type: none;
 }
 
-.footer-bottom a:hover {
-  color: #40a788de;
+.footer-right .content {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.footer-right .content:hover {
+  color: var(--primary-color);
+}
+
+.footer-right .header {
+  color: #505050bb;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.logo-footer {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #121212;
+}
+
+.rights {
+  padding-top: 20px;
 }
 
 /* ----- Custom Scrollbar (from File 2) ----- */
@@ -626,7 +620,7 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(to top, #40a788de, #40a788de);
+  background: linear-gradient(to top, var(--primary-color), var(--primary-color));
   border: 6px solid transparent;
   cursor: grabbing;
   background-clip: padding-box;

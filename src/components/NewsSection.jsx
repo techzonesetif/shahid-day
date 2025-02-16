@@ -6,14 +6,17 @@ function NewsSection() {
       <h2>NEWS</h2>
       <div className={style["news-grid"]}>
         <div className={style["news-card"]}>
-          <h3>FEATURED</h3>
+          <h3 className={style["news-title"]}>FEATURED</h3>
           <p>UNITED STATES HOLOCAUST MEMORIAL MUSEUM CONDEMNS MISUSE OF HOLOCAUST IN PUBLIC DISCOURSE</p>
+          <span className={style["news-date"]}>November 8, 2024</span>
         </div>
         <div className={style["news-card"]}>
+          <h3 className={style["news-title"]}>FEATURED</h3>
           <p>MUSEUM STRONGLY CONDEMNS ANTISEMITIC ATTACKS IN AMSTERDAM</p>
           <span className={style["news-date"]}>November 8, 2024</span>
         </div>
         <div className={style["news-card"]}>
+          <h3 className={style["news-title"]}>FEATURED</h3>
           <p>MUSEUM CALLS ON COLLEGES AND UNIVERSITIES TO ADDRESS RISING ANTISEMITISM ON CAMPUSES</p>
           <span className={style["news-date"]}>April 22, 2024</span>
         </div>

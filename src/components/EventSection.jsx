@@ -36,7 +36,7 @@ function EventSection() {
           </div>
         </div>
         <a href="#" className={style["view-events"]} target="_blank" rel="noopener noreferrer">
-          FOR MORE EVENTS
+          For more event
         </a>
       </section>
     )
