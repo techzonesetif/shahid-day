@@ -1,5 +1,6 @@
 import style from './page.module.css'
 import { Link } from 'react-router-dom'
+import testImg from '../../assets/test.png'
 
 export default function Home() {
   return (
@@ -8,12 +9,9 @@ export default function Home() {
       <HeroSection />
       <ImageGallery />
       <hr />
-      <VisitSection />
-      <hr />
       <EventsSection />
       <CollectionsSection />
       <NewsSection />
-      <ContactSection />
       <Footer />
     </div>
   )
@@ -85,6 +83,7 @@ function ImageGallery() {
   )
 }
 
+// Unused
 function VisitSection() {
   return (
     <section className={style["visit"]}>
@@ -96,7 +95,7 @@ function VisitSection() {
       <ul className={style["visit-grid"]}>
         <li className={style["grid-item"]}>
           <div className={style["info-circle"]}>
-            <img src="nopls.jfif" alt="Today at the Museum" />
+            <img src='' alt="Today at the Museum" />
           </div>
           <div className={style["text-wrapper"]}>
             <h3>TODAY AT THE MUSEUM</h3>
@@ -147,28 +146,28 @@ function EventsSection() {
       <h2>NATIONAL EVENTS</h2>
       <div className={style["events-grid"]}>
         <div className={style["event-card"]}>
-          <img src="nopls.jfif" alt="Event image" />
+          <img src={testImg} alt="Event image" />
           <div className={style["event-content"]}>
             <h3>2025 First Person Series: Joël Nommick</h3>
             <p>THIS EVENT WILL BE LIVESTREAMED. LOOP ALL ET</p>
           </div>
         </div>
         <div className={style["event-card"]}>
-          <img src="soap.jfif" alt="Event image" />
+          <img src={testImg} alt="Event image" />
           <div className={style["event-content"]}>
             <h3>2025 New York Next Generation Event</h3>
             <p>NEW YORK, NY • 6:20 P.M. ET</p>
           </div>
         </div>
         <div className={style["event-card"]}>
-          <img src="wellwellwell.jfif" alt="Event image" />
+          <img src={testImg} alt="Event image" />
           <div className={style["event-content"]}>
             <h3>Surviving the Holocaust Together</h3>
             <p>WASHINGTON, DC • 6:20 P.M. ET</p>
           </div>
         </div>
         <div className={style["event-card"]}>
-          <img src="today.jfif" alt="Event image" />
+          <img src={testImg} alt="Event image" />
           <div className={style["event-content"]}>
             <h3>How Holocaust Education Is Shaping the Future of Military Leadership</h3>
             <p>GLOBECE, IL • 7:20 P.M. ET</p>
@@ -227,6 +226,7 @@ function NewsSection() {
   )
 }
 
+// Unused
 function ContactSection() {
   return (
     <section className={style["contact"]}>
