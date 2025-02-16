@@ -2,7 +2,6 @@ import style from './page.module.css'
 import Header from '../../components/Header'
 import HeroSection from '../../components/HeroSection'
 import ImageGallery from '../../components/ImageGallery'
-import Footer from '../../components/Footer'
 import NewsSection from '../../components/NewsSection'
 import EventSection from '../../components/EventSection'
 import CollectionsSection from '../../components/CollectionsSection'
@@ -11,14 +10,12 @@ import CollectionsSection from '../../components/CollectionsSection'
 export default function Home() {
   return (
     <div className={style.container}>
-      <Header />
       <HeroSection />
       <ImageGallery />
       <hr />
       <EventSection />
       <CollectionsSection />
       <NewsSection />
-      <Footer />
     </div>
   )
 }
