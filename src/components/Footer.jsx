@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import style from '../pages/home/page.module.css'
 
 function Footer() {
@@ -5,7 +6,11 @@ function Footer() {
     <footer>
       <div className={style["footer-top"]}>
         <div className={style["footer-left"]}>
-          <img src="image.png" alt="Museum Logo" className={style["footer-logo"]} />
+            <div className={style["site-logo"]}>
+                <Link to={'/'}>
+                    <p className={style["logo"]}>ALGERIAN HISTORY</p>
+                </Link>
+            </div>
           <div className={style["footer-address"]}>
             <p>100 Raoul Wallenberg Place, SW</p>
             <p>Washington, DC 20024-2126</p>

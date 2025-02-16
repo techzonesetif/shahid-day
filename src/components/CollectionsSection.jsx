@@ -1,11 +1,12 @@
 import style from '../pages/home/page.module.css'
+import testImg from '../assets/test.png'
 
 function CollectionsSection() {
   return (
     <section className={style["collections"]}>
       <div className={style["collections-container"]}>
         <div className={style["image-column"]}>
-          <img src="collectionssearch.webp" alt="Collection Preview" />
+          <img src={testImg} alt="Collection Preview" />
         </div>
         <div className={style["content-column"]}>
           <h2>SEARCH OUR COLLECTIONS</h2>
