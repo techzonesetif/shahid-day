@@ -38,7 +38,7 @@ function Footer() {
         </div>
       </div>
       <hr className={style["footer-divider"]} />
-      <p className={style["rights"]}>&#xA9; Algerian History. All Rights Reserved.</p>
+      <p className={style["rights"]}>&#xA9;{new Date().getFullYear()} Algerian History. All Rights Reserved.</p>
     </footer>
   )
 }
