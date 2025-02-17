@@ -25,7 +25,7 @@ function QuotesSection() {
   }
 
   return (
-    <section className={style["news"]}>
+    <section id='quote-section' className={style["news"]}>
       <h2>Quotes</h2>
       <div className={style["news-grid"]}>
         <NewsCard {...cardDate.card1} />

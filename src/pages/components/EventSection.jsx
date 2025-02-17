@@ -5,7 +5,7 @@ import EventCard from './UI/EventCard';
 function EventSection() {
 
     return (
-      <section id='Events-section' className={style["events"]}>
+      <section id='events-section' className={style["events"]}>
         <h2>Famous Events</h2>
         <div className={style["events-grid"]}>
           <EventCard {...cardsData.card1} />
