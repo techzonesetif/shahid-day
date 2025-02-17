@@ -1,9 +1,7 @@
 import { faClock, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import style from '../../pages/home/page.module.css'
+import style from '../../home/page.module.css'
 import { Link } from "react-router-dom";
-
-
 
 function NewsCard(props) {
 

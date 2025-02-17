@@ -1,7 +1,7 @@
-import style from '../pages/home/page.module.css'
-import NewsCard from './UI/NewsCard';
+import style from '../home/page.module.css'
+import NewsCard from './UI/QuoteCard';
 
-function NewsSection() {
+function QuotesSection() {
 
   const cardDate = {
     card1: {
@@ -26,7 +26,7 @@ function NewsSection() {
 
   return (
     <section className={style["news"]}>
-      <h2>News</h2>
+      <h2>Quotes</h2>
       <div className={style["news-grid"]}>
         <NewsCard {...cardDate.card1} />
         <NewsCard {...cardDate.card2} />
@@ -37,4 +37,4 @@ function NewsSection() {
   )
 }
 
-export default NewsSection;
+export default QuotesSection;

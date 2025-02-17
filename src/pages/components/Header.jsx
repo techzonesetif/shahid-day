@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import style from '../pages/home/page.module.css'
+import style from '../home/page.module.css'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -25,7 +25,7 @@ function Header() {
           <div className={style["container"]}>
             <div className={style["site-logo"]}>
               <Link to={'/'}>
-                <p className={style["logo"]}>ALGERIAN HISTORY</p>
+                <p className={style["logo"]}>Algerian History</p>
               </Link>
             </div>
             <button 

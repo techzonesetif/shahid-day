@@ -1,5 +1,5 @@
-import style from '../pages/home/page.module.css'
-import testImg from '../assets/test.png'
+import style from '../home/page.module.css'
+import testImg from '../../assets/test.png'
 
 function CollectionsSection() {
   return (
