@@ -1,108 +1,121 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState,  } from 'react'
 import style from './page.module.css'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Styledmarkdown from '../../components/markdown/Styledmarkdown'
-
+const data=[
+  
+  {
+    "title": "Renewable Energy Trends",
+    "author": "Alice Smith",
+    "date": "2023-05-01",
+    "image": "https://picsum.photos/800/450?random=1",
+    "tags": ["energy", "renewable"],
+    "description": "A deep dive into the latest trends in renewable energy.",
+    "text": "# Renewable Energy\n\nRenewable energy is transforming the global energy landscape..."
+  },
+  {
+    "title": "Advancements in Solar Technology",
+    "author": "Bob Johnson",
+    "date": "2023-06-10",
+    "image": "https://picsum.photos/800/450?random=2",
+    "tags": ["solar", "technology"],
+    "description": "Exploring the breakthroughs in solar panel efficiency.",
+    "text": "Solar panels are becoming more efficient thanks to new materials and designs."
+  },
+  {
+    "title": "Wind Energy: Harnessing Nature",
+    "author": "Carla Diaz",
+    "date": "2023-07-20",
+    "image": "https://picsum.photos/800/450?random=3",
+    "tags": ["wind", "sustainability"],
+    "description": "An overview of wind energy and its role in sustainable power.",
+    "text": "Wind energy has the potential to power millions of homes."
+  },
+  {
+    "title": "Electric Vehicles and Energy Storage",
+    "author": "David Lee",
+    "date": "2023-08-05",
+    "image": "https://picsum.photos/800/450?random=4",
+    "tags": ["electric vehicles", "energy storage"],
+    "description": "How electric vehicles are reshaping energy consumption and storage.",
+    "text": "Electric vehicles represent a shift towards a cleaner, more efficient future."
+  },
+  {
+    "title": "Hydrogen: The Next Big Thing?",
+    "author": "Eva Martinez",
+    "date": "2023-09-15",
+    "image": "https://picsum.photos/800/450?random=5",
+    "tags": ["hydrogen", "innovation"],
+    "description": "Investigating hydrogen as a sustainable fuel alternative.",
+    "text": "Hydrogen fuel cells could be key in the transition to a sustainable economy."
+  },
+  {
+    "title": "Smart Grids and Future Infrastructure",
+    "author": "Frank Zhao",
+    "date": "2023-10-10",
+    "image": "https://picsum.photos/800/450?random=6",
+    "tags": ["smart grid", "infrastructure"],
+    "description": "The integration of smart grids into our modern infrastructure.",
+    "text": "Smart grids are revolutionizing the way we manage energy distribution."
+  },
+  {
+    "title": "Sustainable Urban Development",
+    "author": "Grace Kim",
+    "date": "2023-11-01",
+    "image": "https://picsum.photos/800/450?random=7",
+    "tags": ["urban", "sustainability"],
+    "description": "How cities are adapting to sustainable practices.",
+    "text": "Urban development is increasingly incorporating green building techniques."
+  },
+  {
+    "title": "Innovations in Energy Efficiency",
+    "author": "Henry Adams",
+    "date": "2023-12-05",
+    "image": "https://picsum.photos/800/450?random=8",
+    "tags": ["efficiency", "innovation"],
+    "description": "Exploring new innovations that improve energy efficiency across industries.",
+    "text": "Energy efficiency improvements are crucial for reducing global consumption."
+  },
+  {
+    "title": "Climate Change and Energy Policy",
+    "author": "Ivy Nguyen",
+    "date": "2024-01-20",
+    "image": "https://picsum.photos/800/450?random=9",
+    "tags": ["climate change", "policy"],
+    "description": "An analysis of the relationship between climate change and current energy policies.",
+    "text": "Policy changes are needed to address the global challenges posed by climate change."
+  }
+]
 
 export default function Article() {
-  const ex=Array.from(Array(10).keys(1))
+  const  link = useParams().link;
+  // const loadedRef = useRef(false);
+  const [article,setArticle]=useState({})
+
   useEffect(()=>{
-console.log(ex)
-
+    setArticle(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
+  },[link])
+  useEffect(()=>{
+    document.querySelector('body').scrollTo({top: 0})     
   })
-  const mark=` 
-# Introduction to Programming: Key Concepts and Tools
-
-Programming is the backbone of modern technology. Whether you're building apps, analyzing data, or automating tasks, coding skills are essential. Below, we’ll explore core concepts with **Arabic examples** for clarity.
-
----
-
-## Why Learn Programming? الأهمية
-
-Here are three reasons to start coding today:
-1. **Problem Solving**: Break down complex issues into logical steps.
-2. **Creativity**: Build anything from websites to AI models.
-3. **Career Growth**: High demand for developers worldwide.
-
-> "التعليم هو أقوى سلاح يمكنك استخدامه لتغيير العالم." — نيلسون مانديلا  
-*(Translation: "Education is the most powerful weapon to change the world.")*
-
----
-
-### Common Programming Languages
-
-| اللغة       | الاستخدام              | Difficulty |
-|-------------|-----------------------|------------|
-| Python      | AI, Data Science      | Easy       |
-| JavaScript  | Web Development       | Moderate   |
-| C++         | Game Development      | Hard       |
-
----
-
-## Arabic Code Examples
-
-\`\`\`python
-# طباعة جملة بالعربية  
-print("مرحبا بالعالم!")  # Output: مرحبا بالعالم!
-\`\`\`
-
-\`\`\`javascript
-// عرض رسالة بالعربية  
-console.log("البرمجة ممتعة!"); // Output: البرمجة ممتعة!
-\`\`\`
-
----
-
-### Arabic-Inspired Practice Projects
-
-1. إنشاء آلة حاسبة بسيطة (Build a simple calculator).
-2. تطبيق قائمة مهام (Develop a to-do list app).
-3. تحليل بيانات باللغة العربية (Analyze Arabic text data).
-
----
-
-## Test Images with Arabic Text
-
-![Arabic Code Example](https://via.placeholder.com/600x300.png?text=كود+برمجي+عربي)  
-*Placeholder image with Arabic text: "كود برمجي عربي" (Arabic Code)*
-
-![Data Graph](https://via.placeholder.com/600x300.png?text=تحليل+البيانات+بالعربية)  
-*Placeholder image: "تحليل البيانات بالعربية" (Data Analysis in Arabic)*
-
----
-
-## Resources for Learning
-- [Codecademy](https://www.codecademy.com) (English)
-- [منصة حسوب](https://academy.hsoub.com) (Arabic)
-- [FreeCodeCamp Arabic](https://www.freecodecamp.org/arabic/)
-
-\`\`\`
-**Tip**: Use \`print()\`, \`console.log()\`, or \`System.out.println()\` to debug your code!
-\`\`\`
-
-`
   return (
     <div className={style.page}>
 
        <article className={style.article_container}>
         
         <header className={style.article_header}>
-            <img src="https://picsum.photos/800/450" alt="Sustainable energy" className={style.article_image}/>
-            <h1 className={style.article_title}>The Future of Sustainable Energy</h1>
+            <img src={article?.image} alt="Sustainable energy" className={style.article_image}/>
+            <h1 className={style.article_title}>{article?.title}</h1>
             <div className={style.article_tags}>
-                        <span>tag</span> 
-                        <span>tag</span> 
-                        <span>tag</span> 
-        </div>
+              {article?.tags?.map(t=><span key={t}>{t}</span>)}
+            </div>
         </header>
-
-       {/* <h1>Must Reads</h1> */}
         <Styledmarkdown >
-            {mark}
+            {article?.text}
         </Styledmarkdown>
         <div className={style.article_meta}>
-                        <div>By <span>John Doe</span></div> 
-                        <span>April 15, 2023</span> 
+            <div>By <span>{article?.author}</span></div> 
+            <span>{article?.date}</span> 
         </div>
        </article>
        
