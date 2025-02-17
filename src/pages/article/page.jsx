@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState,  } from 'react'
 import style from './page.module.css'
-import { Link } from 'react-router-dom'
-
+import { Link, useParams } from 'react-router-dom'
+import Styledmarkdown from '../../components/markdown/Styledmarkdown'
 const data=[
-
+  
   {
     "title": "Renewable Energy Trends",
     "author": "Alice Smith",
@@ -87,126 +87,42 @@ const data=[
   }
 ]
 
+export default function Article() {
+  const  link = useParams().link;
+  // const loadedRef = useRef(false);
+  const [article,setArticle]=useState({})
 
-export default function ArticlesPage() {
   useEffect(()=>{
-      document.querySelector('body').scrollTo({
-        top: 0    })     
+    setArticle(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
+  },[link])
+  useEffect(()=>{
+    document.querySelector('body').scrollTo({top: 0})     
   })
   return (
     <div className={style.page}>
-    <aside className={style.side_bar}>
-    {/* <Link to={`/article`} className={style.card}>
-    Reads
-</Link> */}
-        <h1>Must Reads</h1>
-        <main className={style.article_list}>
-          {data.map((e)=>  <Card key={e.title} data={e}/>)}
-        </main>
-    </aside>
-      <Article_preview/>
+
+       <article className={style.article_container}>
+        
+        <header className={style.article_header}>
+            <img src={article?.image} alt="Sustainable energy" className={style.article_image}/>
+            <h1 className={style.article_title}>{article?.title}</h1>
+            <div className={style.article_tags}>
+              {article?.tags?.map(t=><span key={t}>{t}</span>)}
+            </div>
+        </header>
+        <Styledmarkdown >
+            {article?.text}
+        </Styledmarkdown>
+        <div className={style.article_meta}>
+            <div>By <span>{article?.author}</span></div> 
+            <span>{article?.date}</span> 
+        </div>
+       </article>
+       
     </div>
   
   )
 }
 
 
-export function Card({data}){
-  const img=useRef(null)
-  useEffect(()=>{
-    // img.current.style.setProperty('--bg-image', `url(/6348321.jpg)`)
-console.log()
-  })
-  return(
-    <>
-    <Link to={`/articles/${data?.title?.replace(/\s+/g, '_')}`} className={`${style.card} ${style.card_des}`}>
-    <img loading="lazy"  src={data?.image}  ref={img} className={style.card_image} /> 
-    <div className={style.card_body}>
-    <h1>{data?.title}</h1>
-    <p>{data?.description}</p>
-    </div>
-    </Link>
-    <Link to={`/article/${data?.title?.replace(/\s+/g, '_')}`} className={`${style.card} ${style.card_phone}`}>
-    <img loading="lazy"  src={data?.image}  ref={img} className={style.card_image} /> 
-    <div className={style.card_body}>
-    <h1>{data?.title}</h1>
-    <p>{data?.description}</p>
-    </div>
-    </Link>
-    </>
-    
-  )
-}
 
-
-import { useParams,useLocation   } from "react-router-dom"
-
- function Article_preview(){
-
-  const  link = useParams().link;
-  // const loadedRef = useRef(false);
-  const location =useLocation()
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [predata,setPredata]=useState({})
-
-  useEffect(()=>{
-    setPredata(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
-  })
-  return(
-   
-    <main className={style.article_preview}>
-      {link&&<>
-        <img
-      src={predata?.image}
-      style={{ filter: isLoaded ? 'blur(0px) grayscale(0%)' : 'blur(10px) grayscale(140%);',
-               transition: 'filter .6s' ,
-               overflow:'hidden' ,
-              
-              }}
-      onLoad={() => setIsLoaded(true)}
-      onError={(e)=>{
-        // e.currentTarget.src='/6348321.jpg';
-        e.currentTarget.style=`
-      background-color: rgb(${Math.random()*150},${Math.random()*150},${Math.random()*150});
-        `
-        e.currentTarget.onerror=null;
-      }}
-       className={style.preview_img} />
-               <h1>   {predata?.title}</h1>
-      <div className={style.preview_body}>
-        <div className={style.listag}>
-          {predata?.tags?.map(t=><span key={t}>{t}</span>)}
-          </div>
-        
-        <p className={style.preview_text}>
-          {predata?.description}
-        </p>
-
-      </div>  
-      <div className={style.preview_footer}>
-      
-      <div  className={style.article__author}>
-            {/* <img loading="lazy"  src='/6348321.jpg'   className={style.author__avatar} />  */}
-            <h4>
-            by: {predata?.author}
-            </h4>
-            <span> {predata?.date}</span>
-        </div>
-        <Link to={`/article/${predata?.title?.replace(/\s+/g, '_')}`} className={style.button}>
-            read more      
-        </Link>
-</div>
-      </>
-      }
-      
-      </main>
-  )
-}
-
-import PropTypes from 'prop-types';
-Card.propTypes = {
-  data: PropTypes.any, 
-};
-Article_preview.propTypes = {
-  data: PropTypes.any, 
-};
