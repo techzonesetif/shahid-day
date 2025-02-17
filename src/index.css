@@ -45,14 +45,136 @@ overflow-x: hidden;
 background-color: #ffffff;
 width: 100vw;
 height: fit-content;
+max-height: 100vh;
+height: 100vh;
+overflow-y: hidden;
+background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) / var(--_s),
+              radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s),
+              radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0 / var(--_s),
+              radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0 / var(--_s),
+              repeating-conic-gradient(var(--c) 0 25%, transparent 0 50%) 0 0 / var(--_s),
+              radial-gradient(var(--_c)) 0 calc(var(--s) / 2) / var(--s) var(--s) var(--c);
+
 }
 
-.body{
+
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: black;
+  background-color: #ffffff;
+
+  background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) / var(--_s),
+              radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s),
+              radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0 / var(--_s),
+              radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0 / var(--_s),
+              repeating-conic-gradient(var(--c) 0 25%, transparent 0 50%) 0 0 / var(--_s),
+              radial-gradient(var(--_c)) 0 calc(var(--s) / 2) / var(--s) var(--s) var(--c);
+  background-attachment: fixed;
+  /* text-align: center; */
+  max-height: 100vh;
+
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  /* overflow: scroll; */
+  overflow-y: scroll;
+}
+
+
+::-webkit-scrollbar {
+  width: 20px;
+  }
+
+::-webkit-scrollbar-track {
+  background: var( --bg-color-one);
+  margin: 5px;
+  padding: 5px;
+}
+body::-webkit-scrollbar-track {
+  margin-top: 80px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var( --bg-color-one);
+  border-radius: 10px;
+  border: 8px solid rgba(0,0,0,0);
+  background-clip: padding-box;
+  background-color: #aaaaaa98;
+  cursor: grab
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to top, #aaa, #aaa);
+  border: 5px solid rgba(0,0,0,0);
+  transition: 1s all;
+  background-clip: padding-box
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to top, #40a788de, #40a788de);
+  border: 6px solid rgba(0,0,0,0);
+  cursor: grabbing;
+  background-clip: padding-box
+}
+
+@media (max-width: 768px) {
+/* ::-webkit-scrollbar {
+  width: 15px
+  }
+
+::-webkit-scrollbar-track {
+  background: var( --bg-color-one);
+  margin: 5px;
+  padding: 5px
+}
+
+::-webkit-scrollbar-thumb {
+  background: var( --bg-color-one);
+  border-radius: 10px;
+  border: 4px solid rgba(0,0,0,0);
+  background-clip: padding-box;
+  background-color: #aaaaaa98;
+  cursor: grab
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to top, #aaa, #aaa);
+  border: 5px solid rgba(0,0,0,0);
+  transition: 1s all;
+  background-clip: padding-box
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to top, #aaa, #aaa);
+  border: 6px solid rgba(0,0,0,0);
+  cursor: grabbing;
+  background-clip: padding-box
+} */
+html 
+{
+  /* scrollbar-gutter: stable; */
+  overflow-x: hidden;
+  background-color: #ffffff;
+  width: 100vw;
+  height: fit-content;
+  max-height: unset;
+  height: unset;
+  overflow-y: unset;
+
+}
+
+body{
   /* height: 100vh; */
   width: 100vw;
   max-width: 100vw;
-  max-height: 100vh;
+  max-height: unset;
+  overflow-y: unset;
+  height: fit-content;
   /* overflow: scroll; */
+  /* overflow: scroll; */
+  scrollbar-gutter: stable;
+
+}
 }
 
 a

@@ -24,20 +24,7 @@ button, a {
   cursor: pointer;
 }
 
-body {
-  font-family: 'Cairo', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: black;
-  background: radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) / var(--_s),
-              radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s),
-              radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0 / var(--_s),
-              radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0 / var(--_s),
-              repeating-conic-gradient(var(--c) 0 25%, transparent 0 50%) 0 0 / var(--_s),
-              radial-gradient(var(--_c)) 0 calc(var(--s) / 2) / var(--s) var(--s) var(--c);
-  background-attachment: fixed;
-  text-align: center;
-}
+
 
 /* ----- Navbar ----- */
 .navbar {
@@ -668,36 +655,4 @@ footer {
 }
 
 
-/* ----- Custom Scrollbar (from File 2) ----- */
-::-webkit-scrollbar {
-  width: 20px;
-}
-
-::-webkit-scrollbar-track {
-  background: #e0e0e0;
-  margin: 5px;
-  padding: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
-  border-radius: 10px;
-  border: 8px solid transparent;
-  background-clip: padding-box;
-  background-color: #aaaaaa98;
-  cursor: grab;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to top, #aaa, #aaa);
-  border: 5px solid transparent;
-  transition: 1s all;
-  background-clip: padding-box;
-}
-
-::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(to top, var(--primary-color), var(--primary-color));
-  border: 6px solid transparent;
-  cursor: grabbing;
-  background-clip: padding-box;
-}
+/*  */
