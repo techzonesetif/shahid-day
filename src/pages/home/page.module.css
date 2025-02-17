@@ -16,6 +16,10 @@
 
 /* Global Styles */
 
+html {
+  scroll-behavior: smooth;
+}
+
 button, a {
   cursor: pointer;
 }
@@ -162,6 +166,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
   margin-top: 80px;
   background: none; /* Remove background image overlay */
@@ -169,16 +174,24 @@ body {
 
 .hero h2 {
   font-size: 3.5rem;
-  margin: 0 auto 20px;
-  max-width: 800px;
+  max-width: 100%;
   padding-bottom: 15px;
 }
 
 .hero p {
   font-size: 1.5rem;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 80%;
   line-height: 1.6;
+}
+
+/* ---- hero responsive ---- */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
 }
 
 /* ----- Gallery Section ----- */
@@ -258,13 +271,16 @@ body {
 .events-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  gap: 50px;
   max-width: 1200px;
   margin: 0 auto 40px;
 }
 
 .event-card {
-  border-radius: 8px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 12px #ddd;
+  backdrop-filter: blur(1px);
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   transition: all 0.3s ease;
@@ -278,32 +294,59 @@ body {
 }
 
 .event-content {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   text-align: left;
+  gap: 12px;
+  padding: 20px;
+}
+
+.event-card:hover {
+  background-color: var(--hover-card);
 }
 
 .event-content h3 {
   font-size: 1.2rem;
-  color: #333;
-  margin: 0 0 10px;
+  color: #121212;
   line-height: 1.4;
+  font-weight: 700;
 }
 
 .event-content p {
   color: #333;
   font-size: 0.9rem;
-  margin: 0;
   font-weight: 600;
 }
 
-.event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 15px;
+.event-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-.event-card:hover h3,
-.event-card:hover p {
+.event-card .card-link {
+  font-size: 16px;
+  font-weight: 700;
   color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  transition: all .3s ease;
+}
+
+.card-link .link-icon {
+  display: inline-block;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.card-link:hover .link-icon {
+  transform: translateX(8px);
 }
 
 .view-events {
@@ -505,13 +548,6 @@ body {
   line-height: 1.4;
 }
 
-.news-date {
-  display: block;
-  margin-top: 15px;
-  color: #333;
-  font-size: 0.9rem;
-}
-
 .show-more {
   padding: 10px 22px;
   border-radius: 8px;
@@ -528,32 +564,6 @@ body {
   color: var(--primary-color);
   font-weight: 800;
   font-size: 16px;
-}
-
-.news-card svg {
-  background-color: transparent;
-  padding-right: 4px;
-}
-
-.news-card .card-link {
-  font-size: 16px;
-  padding-top: 16px;
-  font-weight: 600;
-  color: var(--primary-color);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-}
-
-.card-link .link-icon {
-  font-size: 12px;
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.card-link:hover .link-icon {
-  transform: translateX(8px);
 }
 
 .show-more:hover {

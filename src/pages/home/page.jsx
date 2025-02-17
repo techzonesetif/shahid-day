@@ -1,21 +1,18 @@
 import style from './page.module.css'
-import Header from '../../components/Header'
-import HeroSection from '../../components/HeroSection'
-import ImageGallery from '../../components/ImageGallery'
-import NewsSection from '../../components/NewsSection'
-import EventSection from '../../components/EventSection'
-import CollectionsSection from '../../components/CollectionsSection'
+import HeroSection from '../components/HeroSection'
+import EventSection from '../components/EventSection'
+import CollectionsSection from '../components/CollectionsSection'
+import QuotesSection from '../components/QuotesSection'
 
 
 export default function Home() {
   return (
     <div className={style.container}>
-      <HeroSection />
-      <ImageGallery />
+      <HeroSection /> 
       <hr />
       <EventSection />
       <CollectionsSection />
-      <NewsSection />
+      <QuotesSection />
     </div>
   )
 }

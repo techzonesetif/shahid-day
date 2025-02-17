@@ -1,4 +1,4 @@
-import style from '../pages/home/page.module.css'
+import style from '../home/page.module.css'
 
 function ImageGallery() {
   return (
