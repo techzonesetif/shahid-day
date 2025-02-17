@@ -2,48 +2,40 @@ import style from '../home/page.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const [menuSvg, setMenuSvg] = useState(faBars);
   const [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation()
+
   const handleMenuBtn = () => {
     setMenuSvg(prev => (prev === faBars ? faXmark : faBars));
     setIsActive(prev => !prev);
   };
 
   const handleNavigation = (targetSection) => {
-    navigate('/')
-        setTimeout(() => {
-          if(targetSection=='#hero'){document.querySelector('body').scrollTo({top: 0,behavior: 'smooth'}) ; return}
-          document.querySelector(targetSection).scrollIntoView({ behavior: 'smooth' });
-          }, 50);     
-    // if (location.pathname=='/') {
-    //   navigate('/')
-
-    //   document.querySelector(targetSection).scrollIntoView({ behavior: 'smooth' });
-      
-    // }else{
-    //   navigate('/')
-    //     setTimeout(() => {
-    //       document.querySelector(targetSection).scrollIntoView({ behavior: 'smooth' });
-    //       }, 50); 
-          
-    // }
-    // setTimeout(() => {
-    //   const section = document.querySelector(targetSection);
-    //   if (section) {
-    //     section.scrollIntoView({ behavior: 'smooth' });
-    //   }
-    // }, 500); 
+    navigate('/');
+    if (targetSection === '#') return;
+  
+    setTimeout(() => {
+      const section = document.querySelector(targetSection);
+      if (section) {
+        const offset = 80; // Adjust this value for the amount of padding you want at the top
+        const elementPosition = section.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - offset;
+  
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 500);
   };
+  
 
   // useEffect(() => {
   // }, [menuSvg]);
-
-
 
   return (
     <header>
@@ -65,23 +57,21 @@ function Header() {
         <nav>
           <ul className={`${style["nav-list"]} ${isActive ? style["active"] : ""}`}>
             <li className={style["nav-item"]}>
-              <span 
+              <a href={'#'}
                 onClick={(e) => {
-                  handleNavigation('#hero');
-
+                  e.preventDefault();
+                  handleNavigation('#');
                   handleMenuBtn()
                 }}
               >
                 <h2>Home</h2>
-              </span>
+              </a>
             </li>
-            <Link to={'/article'}>
-
             <li className={style["nav-item"]}>
+              <a href={'/article'}>
                 <h2>Articles</h2>
-              
+              </a>
             </li>
-            </Link>
             <li className={style["nav-item"]}>
               <a
                 href="#events-section"
