@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import style from '../pages/home/page.module.css'
+import style from '../home/page.module.css'
 
 function Footer() {
   return (
@@ -7,7 +7,7 @@ function Footer() {
       <div className={style["footer-top"]}>
         <div className={style["footer-left"]}>
             <Link to={'/'}>
-                <p className={style["logo-footer"]}>ALGERIAN HISTORY</p>
+                <p className={style["logo-footer"]}>Algerian History</p>
             </Link>
           <div className={style["footer-address"]}>
             <p>100 Raoul Wallenberg Place, SW</p>
