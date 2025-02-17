@@ -2,12 +2,12 @@ import style from '../home/page.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
   const [menuSvg, setMenuSvg] = useState(faBars);
   const [isActive, setIsActive] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleMenuBtn = () => {
     setMenuSvg(prev => (prev === faBars ? faXmark : faBars));
@@ -15,20 +15,20 @@ function Header() {
   };
 
   const handleNavigation = (targetSection) => {
-    // Navigate to the home page
     navigate('/');
+    if(targetSection === '#')
+      return
 
-    // After a short delay, scroll to the target section
     setTimeout(() => {
       const section = document.querySelector(targetSection);
       if (section) {
         section.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 500); // Adjust the delay as needed
+    }, 500); 
   };
 
-  useEffect(() => {
-  }, [menuSvg]);
+  // useEffect(() => {
+  // }, [menuSvg]);
 
   return (
     <header>
@@ -50,7 +50,13 @@ function Header() {
         <nav>
           <ul className={`${style["nav-list"]} ${isActive ? style["active"] : ""}`}>
             <li className={style["nav-item"]}>
-              <a href={'#'}>
+              <a href={'#'}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation('#');
+                  handleMenuBtn()
+                }}
+              >
                 <h2>Home</h2>
               </a>
             </li>
@@ -65,6 +71,7 @@ function Header() {
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavigation('#events-section');
+                  handleMenuBtn()
                 }}
               >
                 <h2>Events</h2>
@@ -76,6 +83,7 @@ function Header() {
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavigation('#martyrs-section');
+                  handleMenuBtn()
                 }}
               >
                 <h2>Martyrs</h2>
@@ -87,6 +95,7 @@ function Header() {
                 onClick={(e) => {
                   e.preventDefault();
                   handleNavigation('#quote-section');
+                  handleMenuBtn()
                 }}
               >
                 <h2>Quotes</h2>
