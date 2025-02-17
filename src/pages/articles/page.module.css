@@ -21,7 +21,7 @@
       repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0 / var(--_s), 
       radial-gradient(var(--_c)) 0 calc(var(--s) / 2) / var(--s) var(--s) var(--c);
     background-attachment: fixed;
-
+margin-top: 80px;
 max-height: 100vh;
    
 }
@@ -43,37 +43,6 @@ max-height: 100vh;
     
 }
 
-::-webkit-scrollbar {
-    width: 20px
-}
-
-::-webkit-scrollbar-track {
-    background: var( --bg-color-one);
-    margin: 5px;
-    padding: 5px
-}
-
-::-webkit-scrollbar-thumb {
-    background: var( --bg-color-one);
-    border-radius: 10px;
-    border: 8px solid rgba(0,0,0,0);
-    background-clip: padding-box;
-    background-color: #aaaaaa98;
-    cursor: grab
-}
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to top, #aaa, #aaa);
-    border: 5px solid rgba(0,0,0,0);
-    transition: 1s all;
-    background-clip: padding-box
-}
-
-::-webkit-scrollbar-thumb:active {
-    background: linear-gradient(to top, #40a788de, #40a788de);
-    border: 6px solid rgba(0,0,0,0);
-    cursor: grabbing;
-    background-clip: padding-box
-}
 
 
 
