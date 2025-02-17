@@ -1,26 +1,16 @@
 import { faClock, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from '../../home/page.module.css'
-import { Link } from "react-router-dom";
 
-function NewsCard(props) {
+function QuoteCard(props) {
 
-    const {title, discreption, date, link} = props;
+    const {author, description} = props;
 
     return(
-        <div className={style["news-card"]}>
-            <h3 className={style["news-title"]}>{title}</h3>
-                <p>{discreption}</p>
-            <span className={style["news-date"]}>
-                <FontAwesomeIcon icon={faClock} /> {date}
-            </span>
-            <Link to={link}>
-                <p className={style["card-link"]}>
-                    <span>Read more</span>
-                    <FontAwesomeIcon className={style["link-icon"]} icon={faAngleRight} />
-                </p>
-            </Link>
+        <div className={style["quotes-card"]}>
+            <p className={style["quote-desc"]}>{description}</p>
+            <h3 className={style["quote-title"]}>{author}</h3>
         </div>
     )
 }
-export default NewsCard;
+export default QuoteCard;
