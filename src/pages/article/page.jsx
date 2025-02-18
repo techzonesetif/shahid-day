@@ -91,7 +91,7 @@ const data=[
 export default function Article() {
   const  link = useParams().link;
   // const loadedRef = useRef(false);
-  const [article,setArticle]=useState({})
+  const [article,setArticle]=useState(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
 
   useEffect(()=>{
     setArticle(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
@@ -105,7 +105,7 @@ export default function Article() {
         <title>{article.title} </title>
         <meta name="description" content={article.description} />
         <meta name="author" content={article.author} />
-        <meta name="keywords" content={article.tags.join(", ")} />
+        <meta name="keywords" content={article?.tags?.join(",")} />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:image" content={article.image} />
