@@ -207,11 +207,11 @@ console.log()
   // const loadedRef = useRef(false);
   const location =useLocation()
   const [isLoaded, setIsLoaded] = useState(false);
-  const [predata,setPredata]=useState({})
+  const [predata,setPredata]=useState(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
 
   useEffect(()=>{
     setPredata(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
-  })
+  },[link])
   return(
    
     <main className={style.article_preview}>
@@ -277,9 +277,9 @@ console.log()
       </main>
   )
 }
+import { Helmet } from 'react-helmet'
 
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet'
 Card.propTypes = {
   data: PropTypes.any, 
 };
