@@ -190,9 +190,11 @@ body {
 @media (max-width: 768px) {
   .hero h2 {
     font-size: 32px;
+    max-width: 95%;
   }
   .hero p {
     font-size: 16px;
+    max-width: 85%;
   }
 }
 
@@ -254,7 +256,7 @@ body {
   border-radius: 12px;
   border: 1px solid #ddd;
   box-shadow: 0 0 12px #ddd;
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(4px);
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   transition: all 0.3s ease;
@@ -446,47 +448,81 @@ body {
 
 /* --- Quotes Section --- */
 .quotes {
-  /* padding: 60px 20px; */
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0 60px 100px 60px;
   text-align: center;
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .quotes h2 {
   font-size: 2.5rem;
   color: #121212;
-  margin-bottom: 40px;
+  padding: 40px;
   letter-spacing: 1px;
 }
 
 .scroll-container {
-  --gap: 50px;
+  --gap: 45px;
   display: flex;
   gap: var(--gap);
   user-select: none;
   overflow: hidden;
+  position: relative;
 }
+
+.scroll-container::after {
+  content: '';
+  background: linear-gradient(to left, #eee, rgba(255, 255, 255, 0));
+  width: 50px;
+  height: calc(100% - 40px);
+  position: absolute;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.scroll-container::before {
+  content: '';
+  background: linear-gradient(to right, #eee, rgba(255, 255, 255, 0));
+  width: 50px;
+  height: calc(100% - 40px);
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+}
+
 
 .quote-container {
   /* padding-left: var(--gap); */
-  flex-shrink: 2;
+  flex-shrink: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: var(--gap);
   min-width: 100%;
+  min-height: 100%;
   list-style-type: none;
-  margin-bottom: 40px;
+  padding-bottom: 40px;
   animation: scroll 40s linear infinite;
   overflow: hidden;
 }
 
 @media (max-width: 768px) {
   .quote-container {
-    flex-shrink: 0;
+    animation-duration: 10s;
   }
-  .quotes-card {
-    min-width: 80vw;
+  .scroll-container {
+    --gap: 60px;
+  }
+  .quotes {
+    padding: 0 0 100px 0;
+    text-align: center;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
@@ -506,19 +542,21 @@ body {
 
 .quotes-card {
   display: flex;
-  align-items: left;
-  justify-content: space-between;
-  text-align: left;
+  justify-content: space-evenly;
   flex-direction: column;
+  align-items: left;
+  text-align: left;
+  gap: 16px;
   background-color: #eee;
   backdrop-filter: blur(1px);
   border: 1px solid #ddd;
   box-shadow: 0 0 12px #eee inset;
-  padding: 30px;
   border-radius: 12px;
   transition: all 0.3s ease;
   min-width: 300px;
-  height: 80%;
+  min-height: 180px;
+  padding: 0 20px;
+  margin: 0 45px;
 }
 
 .quotes-card:hover {
@@ -528,19 +566,21 @@ body {
 
 .quotes-card h3 {
   font-size: 1.1rem;
-  color: #333;
+  color: var(--primary-color);
   margin: 0 0 15px 0;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .quotes-card p {
+  font-weight: 600;
   font-size: 1.1rem;
   color: #333;
   margin: 0;
   line-height: 1.4;
 }
-
-
 
 /* ----- Footer Section ----- */
 footer {
@@ -549,7 +589,6 @@ footer {
   padding: 40px 20px;
   font-family: 'Cairo', sans-serif;
   position: relative;
-  margin-top: 80px;
 }
 
 .footer-top {

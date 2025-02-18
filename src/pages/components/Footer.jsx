@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import style from '../home/page.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
@@ -17,11 +16,11 @@ function Footer() {
             <p>faculty of sciences</p>
             <p className={style["fac-links"]}>
               <FontAwesomeIcon icon={faFacebook} />
-              <a><span>Visit out page</span></a>
+              <a target='_blank' href='https://www.facebook.com/fsciences/'><span>Visit out page</span></a>
             </p>
             <p className={style["fac-links"]}>
               <FontAwesomeIcon icon={faEnvelope} />
-              <a><span>Check Our email</span></a>
+              <a target='_blank' href='https://mail.univ-setif.dz/'><span>Check Our email</span></a>
             </p>
           </div>
         </div>
@@ -41,9 +40,9 @@ function Footer() {
             </ul>
             <ul>
                 <li className={style["header"]}>Legal</li>
-                <a href={''}><li className={style["content"]}>Terms and conditions</li></a>
-                <a href={''}><li className={style["content"]}>Privacy policy</li></a>
-                <a href={''}><li className={style["content"]}>Confront</li></a>
+                <a href={'#'}><li className={style["content"]}>Terms and conditions</li></a>
+                <a href={'#'}><li className={style["content"]}>Privacy policy</li></a>
+                <a href={'#'}><li className={style["content"]}>Confront</li></a>
             </ul>
         </div>
       </div>
