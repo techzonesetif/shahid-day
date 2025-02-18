@@ -207,7 +207,7 @@ const [datas,setData]=useState([])
   useEffect(() => {
     window.scrollTo({ top: 0 });
     setData(data)
-  });
+  },[]);
 
   const structuredData = useMemo(() => JSON.stringify({
     "@context": "https://schema.org",
@@ -296,7 +296,7 @@ const Card = memo(({ data }) => {
     [isMobile, articleUrl]
   );
 
-  useEffect(()=>{setisMobile(window.innerWidth <= 900)})
+  useEffect(()=>{setisMobile(window.innerWidth <= 900)},[])
   return (
     <Link 
       to={targetPath} 

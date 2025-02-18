@@ -61,6 +61,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import style from '../home/page.module.css';
+import PropTypes from 'prop-types';
 
 const MemoizedFooterLink = memo(function FooterLink({ to, children, isExternal = false }) {
   if (isExternal) {
@@ -76,7 +77,9 @@ const MemoizedFooterLink = memo(function FooterLink({ to, children, isExternal =
     </Link>
   );
 });
-
+MemoizedFooterLink.propTypes = {
+  to:PropTypes.any, children: PropTypes.any, isExternal: PropTypes.any, 
+};
 const FooterSection = memo(function FooterSection({ title, links }) {
   return (
     <ul>
@@ -91,7 +94,9 @@ const FooterSection = memo(function FooterSection({ title, links }) {
     </ul>
   );
 });
-
+FooterSection.propTypes = {
+  title:PropTypes.any, links: PropTypes.any, 
+  };
 function Footer() {
   const currentYear = useMemo(() => new Date().getFullYear(), []);
   
