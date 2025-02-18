@@ -185,7 +185,7 @@ body{
   height: fit-content;
   /* overflow: scroll; */
   /* overflow: scroll; */
-  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable; */
 
 }
 }

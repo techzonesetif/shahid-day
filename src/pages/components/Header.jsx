@@ -16,6 +16,7 @@ function Header() {
 
   const handleNavigation = (targetSection) => {
     navigate('/')
+    
         setTimeout(() => {
           if(targetSection=='#hero'){document.querySelector('body').scrollTo({top: 0,behavior: 'smooth'}) ; return}
           document.querySelector(targetSection).scrollIntoView({ behavior: 'smooth' });
