@@ -4,7 +4,7 @@ import style from "../home/page.module.css"
 
 function MartyrsSection() {
     return (
-        <section id="martyrs-section" className={style["martyr-section"]}>
+        <section style={{scrollMarginTop: "80px"}} id="martyrs-section" className={style["martyr-section"]}>
             <div className={style["header-section"]} >
                 <h2>Maryters</h2>
             </div>

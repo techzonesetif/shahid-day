@@ -19,7 +19,7 @@ function QuotesSection() {
   }
 
   return (
-    <section id='quote-section' className={style["quotes"]}>
+    <section style={{scrollMarginTop: "40px"}} id='quote-section' className={style["quotes"]}>
       <h2>Quotes</h2>
       <div className={style["scroll-container"]}>
         <ul aria-hidden="true" className={style["quote-container"]}>

@@ -2,7 +2,7 @@ import style from '../home/page.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header() {
   const [menuSvg, setMenuSvg] = useState(faBars);
@@ -16,26 +16,19 @@ function Header() {
 
   const handleNavigation = (targetSection) => {
     navigate('/');
-    if (targetSection === '#') return;
-  
+    if(targetSection === '#')
+      return
+
     setTimeout(() => {
       const section = document.querySelector(targetSection);
       if (section) {
-        const offset = 80; // Adjust this value for the amount of padding you want at the top
-        const elementPosition = section.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - offset;
-  
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        section.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 500);
+    }, 500); 
   };
-  
 
-  // useEffect(() => {
-  // }, [menuSvg]);
+  useEffect(() => {
+  }, [menuSvg]);
 
   return (
     <header>
@@ -68,9 +61,9 @@ function Header() {
               </a>
             </li>
             <li className={style["nav-item"]}>
-              <a href={'/article'}>
+              <Link to={'/article'}>
                 <h2>Articles</h2>
-              </a>
+              </Link>
             </li>
             <li className={style["nav-item"]}>
               <a
