@@ -5,7 +5,10 @@
     line-height: 1.8;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.85);
+<<<<<<< HEAD
     -webkit-backdrop-filter: blur(8px);
+=======
+>>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
     backdrop-filter: blur(8px);
     border-radius: 10px;
     box-shadow: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px, 
@@ -128,7 +131,10 @@
     border: 2px solid #fcd34d;
     border-radius: 8px;
     margin: 1.5rem 0;
+<<<<<<< HEAD
     -webkit-backdrop-filter: blur(4px);
+=======
+>>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
     backdrop-filter: blur(4px);
   }
   
@@ -150,7 +156,10 @@
     .Markdown {
       padding: 1rem;
       margin: 0.5rem;
+<<<<<<< HEAD
       -webkit-backdrop-filter: blur(4px);
+=======
+>>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
       backdrop-filter: blur(4px);
     }
     
@@ -183,6 +192,7 @@
     opacity: 0.5;
     cursor: pointer;
 
+<<<<<<< HEAD
 ;
    }
    .copyButton{
@@ -190,6 +200,8 @@
     display: flex;
     width: 100%;
     justify-content: center;
+=======
+>>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
    }
    .Copie:hover{
     /* background-color: rgba(255, 255, 255, 0.342); */

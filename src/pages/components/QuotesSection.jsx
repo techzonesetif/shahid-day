@@ -4,6 +4,7 @@ import QuoteCard from './UI/QuoteCard';
 import { quotesData } from '../data/quotesCardsData';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const QuotesSection = memo(function QuotesSection() {
   const quotesData = useMemo(() => [
     {
@@ -59,6 +60,11 @@ const QuotesSection = memo(function QuotesSection() {
 function QuotesSection() {
 
   return (
+=======
+function QuotesSection() {
+
+  return (
+>>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
     <section style={{scrollMarginTop: "40px"}} id='quote-section' className={style["quotes"]}>
       <h2>Quotes</h2>
       <div className={style["scroll-container"]}>

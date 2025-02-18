@@ -342,7 +342,10 @@
   border-radius: 12px;
   transition: background-color 0.3s ease;
   overflow: hidden;
+<<<<<<< HEAD
   /* aspect-ratio: 1/1; */
+=======
+>>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
 }
 
 .martyr-card:hover {
@@ -350,11 +353,19 @@
 }
 
 .martyr-card img {
+<<<<<<< HEAD
   padding: 0px;
   object-fit: cover;
   width: calc(100% - 0px);
   /* height: 100px; */
   /* border-radius: 12px 0; */
+=======
+  padding: 10px 20px 0 20px;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+>>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
 }
 
 .content-section {
@@ -395,8 +406,12 @@
   gap: 8px;
   color: var(--primary-color);
   font-weight: 700;
+<<<<<<< HEAD
   /* width: fit-content  ; */
   justify-content: center;
+=======
+  width: fit-content  ;
+>>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
 }
 
 .card-link svg {
