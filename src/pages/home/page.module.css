@@ -447,7 +447,32 @@
   animation: scroll 40s linear infinite;
   overflow: hidden;
 }
+/* Add to your CSS module */
+.quotes-card {
+  position: relative;
+  contain: content;
+}
 
+.quote-icon {
+  position: absolute;
+  top: 1rem;
+  left: 0rem;
+  opacity: 0.1;
+  font-size: 4rem;
+  z-index: 0;
+}
+
+blockquote {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+}
 @media (max-width: 768px) {
   .quote-container {
     flex-shrink: 0;
