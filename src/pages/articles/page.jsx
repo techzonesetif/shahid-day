@@ -87,7 +87,7 @@ const data=[
 
 
 import { useEffect, useState,  useMemo, memo } from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import style from './page.module.css';
 import PropTypes from 'prop-types';
@@ -114,47 +114,47 @@ const MemoizedHelmet = memo(() => (
 ));
 MemoizedHelmet.displayName = 'MemoizedHelmet';
 
-const Card = memo(({ data }) => {
-  const articleUrl = useMemo(
-    () => `${data?.title?.replace(/\s+/g, '_')}`,
-    [data?.title]
-  );
+// const Card = memo(({ data }) => {
+//   const articleUrl = useMemo(
+//     () => `${data?.title?.replace(/\s+/g, '_')}`,
+//     [data?.title]
+//   );
 
-  return (
-    <>
-        <Link to={`/articles/${articleUrl}`} className={`${style.card} ${style.card_des}`}>
-        <img 
-        loading="lazy" 
-        src={data?.image} 
-        className={style.card_image} 
-        alt={data?.title}
-      />
-      <div className={style.card_body}>
-        <h1>{data?.title}</h1>
-        <p>{data?.description}</p>
-      </div>
-    </Link>
-    <Link to={`/article/${articleUrl}`} className={`${style.card} ${style.card_phone}`}>
-      <img 
-        loading="lazy" 
-        src={data?.image} 
-        className={style.card_image} 
-        alt={data?.title}
-      />
-      <div className={style.card_body}>
-        <h1>{data?.title}</h1>
-        <p>{data?.description}</p>
-      </div>
-    </Link>
-    </>
+//   return (
+//     <>
+//         <Link to={`/articles/${articleUrl}`} className={`${style.card} ${style.card_des}`}>
+//         <img 
+//         loading="lazy" 
+//         src={data?.image} 
+//         className={style.card_image} 
+//         alt={data?.title}
+//       />
+//       <div className={style.card_body}>
+//         <h1>{data?.title}</h1>
+//         <p>{data?.description}</p>
+//       </div>
+//     </Link>
+//     <Link to={`/article/${articleUrl}`} className={`${style.card} ${style.card_phone}`}>
+//       <img 
+//         loading="lazy" 
+//         src={data?.image} 
+//         className={style.card_image} 
+//         alt={data?.title}
+//       />
+//       <div className={style.card_body}>
+//         <h1>{data?.title}</h1>
+//         <p>{data?.description}</p>
+//       </div>
+//     </Link>
+//     </>
 
-  );
-});
+//   );
+// });
 
-Card.displayName = 'Card';
-Card.propTypes = {
-  data:PropTypes.any, 
-};
+// Card.displayName = 'Card';
+// Card.propTypes = {
+//   data:PropTypes.any, 
+// };
 const ArticlePreview = memo(() => {
   const { link } = useParams();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -203,11 +203,11 @@ const ArticlePreview = memo(() => {
 ArticlePreview.displayName = 'ArticlePreview';
  
 export default function ArticlesPage() {
-  const location = useLocation();
-
+const [datas,setData]=useState([])  
   useEffect(() => {
     window.scrollTo({ top: 0 });
-  }, [location.pathname]);
+    setData(data)
+  });
 
   const structuredData = useMemo(() => JSON.stringify({
     "@context": "https://schema.org",
@@ -242,7 +242,7 @@ export default function ArticlesPage() {
       <aside className={style.side_bar}>
         <h1>Must Reads</h1>
         <main className={style.article_list}>
-          {data.map(article => (
+          {datas.map(article => (
             <Card key={article.title} data={article} />
           ))}
         </main>
@@ -251,3 +251,76 @@ export default function ArticlesPage() {
     </div>
   );
 }
+
+
+
+
+
+// const useViewport = () => {
+//   const [isMobile, setIsMobile] = useState(false);
+
+//   useEffect(() => {
+//     const checkMobile = () => setIsMobile(window.innerWidth <= 900);
+    
+//     // Initial check
+//     checkMobile();
+    
+//     // Debounce resize handler
+//     const debounce = (fn, ms) => {
+//       let timeout;
+//       return () => {
+//         clearTimeout(timeout);
+//         timeout = setTimeout(fn, ms);
+//       };
+//     };
+
+//     const handleResize = debounce(checkMobile, 100);
+    
+//     window.addEventListener('resize', handleResize);
+//     return () => window.removeEventListener('resize', handleResize);
+//   }, []);
+
+//   return { isMobile };
+// };
+
+const Card = memo(({ data }) => {
+  const [isMobile,setisMobile] = useState();
+  const articleUrl = useMemo(
+    () => data?.title?.replace(/\s+/g, '_'),
+    [data?.title]
+  );
+
+  // Single dynamic link based on viewport
+  const targetPath = useMemo(
+    () => isMobile? `/article/${articleUrl}` : `/articles/${articleUrl}`,
+    [isMobile, articleUrl]
+  );
+
+  useEffect(()=>{setisMobile(window.innerWidth <= 900)})
+  return (
+    <Link 
+      to={targetPath} 
+      className={`${style.card} ${isMobile ? style.card_phone : style.card_des}`}
+    >
+      <img 
+        loading="lazy" 
+        src={data?.image} 
+        className={style.card_image} 
+        alt={data?.title}
+      />
+      <div className={style.card_body}>
+        <h1>{data?.title}</h1>
+        <p>{data?.description}</p>
+      </div>
+    </Link>
+  );
+});
+
+Card.displayName = 'AdaptiveCard';
+Card.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    image: PropTypes.string,
+    description: PropTypes.string,
+  }).isRequired,
+};
