@@ -33,7 +33,7 @@ import { faCalendar, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import style from '../../home/page.module.css';
 
-const MartyrCard = memo(function MartyrCard({ title, description, date, img, slug }) {
+const MartyrCard = memo(function MartyrCard({ title, date, img, slug }) {
  
 
   return (
