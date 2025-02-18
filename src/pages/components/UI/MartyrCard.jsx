@@ -10,9 +10,7 @@ function MartyrCard(props) {
 
     return (
         <section className={style["martyr-card"]}>
-            <div className={style["img-section"]}>
-                <img src={img} alt='martyr-img' />
-            </div>
+            <img src={img} alt='martyr-img' />
             <div className={style["content-section"]}>
                 <h3 className={style['title']}>{title}</h3>
                 <p className={style['desc']}>{descreption}</p>

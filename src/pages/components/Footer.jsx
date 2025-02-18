@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import style from '../home/page.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 function Footer() {
   return (
@@ -10,10 +13,16 @@ function Footer() {
                 <p className={style["logo-footer"]}>Algerian History</p>
             </a>
           <div className={style["footer-address"]}>
-            <p>100 Raoul Wallenberg Place, SW</p>
-            <p>Washington, DC 20024-2126</p>
-            <p>Main telephone: 202.488.0400</p>
-            <p>TTY: 202.488.0406</p>
+            <p>University Farhat Abbas 1, Setif</p>
+            <p>faculty of sciences</p>
+            <p className={style["fac-links"]}>
+              <FontAwesomeIcon icon={faFacebook} />
+              <a><span>Visit out page</span></a>
+            </p>
+            <p className={style["fac-links"]}>
+              <FontAwesomeIcon icon={faEnvelope} />
+              <a><span>Check Our email</span></a>
+            </p>
           </div>
         </div>
         <div className={style["footer-right"]}>
@@ -22,12 +31,13 @@ function Footer() {
                 <a href={'/article'}><li className={style["content"]}>Articles</li></a>
                 <a href={'#events-section'}><li className={style["content"]}>Events</li></a>
                 <a href={'#martyr-section'}><li className={style["content"]}>Martyrs</li></a>
+                <a href={'#quote-section'}><li className={style["content"]}>Quotes</li></a>
             </ul>
             <ul>
                 <li className={style["header"]}>Follow us</li>
-                <a href={''}><li className={style["content"]}>Instagram</li></a>
-                <a href={''}><li className={style["content"]}>Github</li></a>
-                <a href={''}><li className={style["content"]}>Twitter</li></a>
+                <a target='_blank' href={'https://www.instagram.com/techzone._.club'}><li className={style["content"]}>Instagram</li></a>
+                <a target='_blank' href={'https://www.facebook.com/people/TechZone-club/'}><li className={style["content"]}>Facebook</li></a>
+                <a target='_blank' href={'https://discord.com/invite/zwmjCPDDzN'}><li className={style["content"]}>Discord</li></a>
             </ul>
             <ul>
                 <li className={style["header"]}>Legal</li>
