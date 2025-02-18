@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<<<<<<< HEAD
-=======
-  <!-- Homepage -->
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
   <url>
     <loc>https://shahid-day.netlify.app/</loc>
     <lastmod>2024-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-<<<<<<< HEAD
-=======
-
-  <!-- Article Gallery -->
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
   <url>
     <loc>https://shahid-day.netlify.app/articles</loc>
     <lastmod>2024-05-20</lastmod>

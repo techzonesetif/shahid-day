@@ -71,24 +71,4 @@ const EventSection = memo(function EventSection() {
   );
 });
 
-<<<<<<< HEAD
-=======
-    return (
-      <section  id='events-section' style={{  scrollMarginTop: "40px"}} className={style["events"]}>
-        <h2>Famous Events</h2>
-        <div className={style["events-grid"]}>
-          <EventCard {...cardsData.card1} />
-          <EventCard {...cardsData.card2} />
-          <EventCard {...cardsData.card3} />
-          <EventCard {...cardsData.card4} />
-          <EventCard {...cardsData.card5} />
-          <EventCard {...cardsData.card6} />
-        </div>
-        <a href="/article" className={style["view-events"]} rel="noopener noreferrer">
-          For more event
-        </a>
-      </section>
-    )
-}
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
 export default EventSection;

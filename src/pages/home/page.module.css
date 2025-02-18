@@ -152,11 +152,9 @@
 @media (max-width: 768px) {
   .hero h2 {
     font-size: 32px;
-    max-width: 95%;
   }
   .hero p {
     font-size: 16px;
-    max-width: 85%;
   }
 }
 
@@ -220,6 +218,7 @@
   box-shadow: 0 0 12px #ddd;
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
+
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   transition: all 0.3s ease;
@@ -342,10 +341,7 @@
   border-radius: 12px;
   transition: background-color 0.3s ease;
   overflow: hidden;
-<<<<<<< HEAD
   /* aspect-ratio: 1/1; */
-=======
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
 }
 
 .martyr-card:hover {
@@ -353,19 +349,11 @@
 }
 
 .martyr-card img {
-<<<<<<< HEAD
   padding: 0px;
   object-fit: cover;
   width: calc(100% - 0px);
   /* height: 100px; */
   /* border-radius: 12px 0; */
-=======
-  padding: 10px 20px 0 20px;
-  object-fit: cover;
-  width: 100px;
-  height: 100px;
-  border-radius: 12px;
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
 }
 
 .content-section {
@@ -406,12 +394,8 @@
   gap: 8px;
   color: var(--primary-color);
   font-weight: 700;
-<<<<<<< HEAD
   /* width: fit-content  ; */
   justify-content: center;
-=======
-  width: fit-content  ;
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
 }
 
 .card-link svg {
@@ -432,64 +416,38 @@
 
 /* --- Quotes Section --- */
 .quotes {
-  padding: 0 60px 100px 60px;
+  /* padding: 60px 20px; */
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
-  background-color: #eee;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .quotes h2 {
   font-size: 2.5rem;
   color: #121212;
-  padding: 40px;
+  margin-bottom: 40px;
   letter-spacing: 1px;
 }
 
 .scroll-container {
-  --gap: 45px;
+  --gap: 50px;
   display: flex;
   gap: var(--gap);
   -webkit-user-select: none;
   user-select: none;
   overflow: hidden;
-  position: relative;
 }
-
-.scroll-container::after {
-  content: '';
-  background: linear-gradient(to left, #eee, rgba(255, 255, 255, 0));
-  width: 50px;
-  height: calc(100% - 40px);
-  position: absolute;
-  right: 0;
-  top: 0;
-  pointer-events: none;
-}
-
-.scroll-container::before {
-  content: '';
-  background: linear-gradient(to right, #eee, rgba(255, 255, 255, 0));
-  width: 50px;
-  height: calc(100% - 40px);
-  position: absolute;
-  pointer-events: none;
-  z-index: 1000;
-}
-
 
 .quote-container {
   /* padding-left: var(--gap); */
-  flex-shrink: 1;
+  flex-shrink: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: var(--gap);
   min-width: 100%;
-  min-height: 100%;
   list-style-type: none;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
   animation: scroll 40s linear infinite;
   overflow: hidden;
 }
@@ -521,18 +479,10 @@ cite {
 }
 @media (max-width: 768px) {
   .quote-container {
-    animation-duration: 10s;
+    flex-shrink: 0;
   }
-  .scroll-container {
-    --gap: 60px;
-  }
-  .quotes {
-    padding: 0 0 100px 0;
-    text-align: center;
-    background-color: #eee;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .quotes-card {
+    min-width: 80vw;
   }
 }
 
@@ -552,22 +502,20 @@ cite {
 
 .quotes-card {
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
   align-items: left;
+  justify-content: space-between;
   text-align: left;
-  gap: 16px;
+  flex-direction: column;
   background-color: #eee;
   -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
   border: 1px solid #ddd;
   box-shadow: 0 0 12px #eee inset;
+  padding: 30px;
   border-radius: 12px;
   transition: all 0.3s ease;
   min-width: 300px;
-  min-height: 180px;
-  padding: 0 20px;
-  margin: 0 45px;
+  height: 80%;
 }
 
 .quotes-card:hover {
@@ -577,21 +525,19 @@ cite {
 
 .quotes-card h3 {
   font-size: 1.1rem;
-  color: var(--primary-color);
+  color: #333;
   margin: 0 0 15px 0;
   letter-spacing: 0.5px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
 }
 
 .quotes-card p {
-  font-weight: 600;
   font-size: 1.1rem;
   color: #333;
   margin: 0;
   line-height: 1.4;
 }
+
+
 
 /* ----- Footer Section ----- */
 footer {
@@ -600,6 +546,7 @@ footer {
   padding: 40px 20px;
   font-family: 'Cairo', sans-serif;
   position: relative;
+  margin-top: 80px;
 }
 
 .footer-top {

@@ -21,11 +21,8 @@ const MemoizedFooterLink = memo(function FooterLink({ to, children, isExternal =
   );
 });
 MemoizedFooterLink.propTypes = {
-  to: PropTypes.any,
-  children: PropTypes.any,
-  isExternal: PropTypes.bool,
+  to:PropTypes.any, children: PropTypes.any, isExternal: PropTypes.any, 
 };
-
 const FooterSection = memo(function FooterSection({ title, links }) {
   return (
     <ul>
@@ -41,10 +38,8 @@ const FooterSection = memo(function FooterSection({ title, links }) {
   );
 });
 FooterSection.propTypes = {
-  title: PropTypes.string.isRequired,
-  links: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
+  title:PropTypes.any, links: PropTypes.any, 
+  };
 function Footer() {
   const currentYear = useMemo(() => new Date().getFullYear(), []);
   

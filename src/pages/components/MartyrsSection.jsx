@@ -43,24 +43,4 @@ const MartyrsSection = memo(function MartyrsSection() {
 // Optional: Add display name for better React DevTools visibility
 MartyrsSection.displayName = 'MartyrsSection';
 
-<<<<<<< HEAD
-=======
-function MartyrsSection() {
-    return (
-        <section style={{scrollMarginTop: "80px"}} id="martyrs-section" className={style["martyr-section"]}>
-            <div className={style["header-section"]} >
-                <h2>Maryters</h2>
-            </div>
-            <div className={style["cards-section"]}>
-                <MartyrCard {...MartyrData.m1}/>
-                <MartyrCard {...MartyrData.m2}/>
-                <MartyrCard {...MartyrData.m3}/>
-                <MartyrCard {...MartyrData.m4}/>
-                <MartyrCard {...MartyrData.m5}/>
-                <MartyrCard {...MartyrData.m6}/>
-            </div>
-        </section>
-    );
-}
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
 export default MartyrsSection;

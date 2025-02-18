@@ -26,35 +26,15 @@
 // }
 
 // export default MartyrCard;
-<<<<<<< HEAD
 import { memo } from 'react';
-=======
-import { memo, useMemo } from 'react';
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import style from '../../home/page.module.css';
 
-<<<<<<< HEAD
 const MartyrCard = memo(function MartyrCard({ title, date, img, slug }) {
  
-=======
-const MartyrCard = memo(function MartyrCard({ title, description, date, img, slug }) {
-  // Memoize formatted date
-  const formattedDate = useMemo(() => {
-    try {
-      return new Date(date).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-    } catch {
-      return date; // Fallback to raw date string
-    }
-  }, [date]);
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
 
   return (
     <section 
@@ -71,34 +51,18 @@ const MartyrCard = memo(function MartyrCard({ title, description, date, img, slu
         height={500}
         decoding="async"
       />
-<<<<<<< HEAD
      
-=======
-      
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
       <div className={style["content-section"]}>
         <h3 
           id={`martyr-title-${slug}`}
           className={style['title']}
         >
-<<<<<<< HEAD
          <span>{title}</span> 
           <div 
-=======
-          {title}
-        </h3>
-        
-        <p className={style['desc']}>
-          {description}
-        </p>
-        
-        <div 
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
           className={style["date-section"]}
           aria-label="Date of martyrdom"
         >
           <FontAwesomeIcon icon={faCalendar} aria-hidden="true" />
-<<<<<<< HEAD
           {date}
         </div>
         </h3>
@@ -108,10 +72,6 @@ const MartyrCard = memo(function MartyrCard({ title, description, date, img, slu
         </p> */}
         
         
-=======
-          <time dateTime={date}>{formattedDate}</time>
-        </div>
->>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
         
         <Link 
           to={`/martyrs/${slug}`}
