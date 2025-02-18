@@ -181,14 +181,14 @@ console.log()
   return(
     <>
     <Link to={`/articles/${data?.title?.replace(/\s+/g, '_')}`} className={`${style.card} ${style.card_des}`}>
-    <img loading="lazy"  src={data?.image}  ref={img} className={style.card_image} /> 
+    {/* <img loading="lazy"  src={data?.image}  ref={img} className={style.card_image} />  */}
     <div className={style.card_body}>
     <h1>{data?.title}</h1>
     <p>{data?.description}</p>
     </div>
     </Link>
     <Link to={`/article/${data?.title?.replace(/\s+/g, '_')}`} className={`${style.card} ${style.card_phone}`}>
-    <img loading="lazy"  src={data?.image}  ref={img} className={style.card_image} /> 
+    {/* <img loading="lazy"  src={data?.image}  ref={img} className={style.card_image} />  */}
     <div className={style.card_body}>
     <h1>{data?.title}</h1>
     <p>{data?.description}</p>
