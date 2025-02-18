@@ -1,6 +1,6 @@
 import { useEffect, useState,  } from 'react'
 import style from './page.module.css'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Styledmarkdown from '../../components/markdown/Styledmarkdown'
 import { Helmet } from 'react-helmet'
 const data=[
