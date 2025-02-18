@@ -1,7 +1,9 @@
 import { memo, useMemo } from 'react';
 import style from '../home/page.module.css';
 import QuoteCard from './UI/QuoteCard';
+import { quotesData } from '../data/quotesCardsData';
 
+<<<<<<< HEAD
 const QuotesSection = memo(function QuotesSection() {
   const quotesData = useMemo(() => [
     {
@@ -53,6 +55,30 @@ const QuotesSection = memo(function QuotesSection() {
               {...quote} 
             />
           ))}
+=======
+function QuotesSection() {
+
+  return (
+    <section style={{scrollMarginTop: "40px"}} id='quote-section' className={style["quotes"]}>
+      <h2>Quotes</h2>
+      <div className={style["scroll-container"]}>
+        <ul aria-hidden="true" className={style["quote-container"]}>
+          <QuoteCard {...quotesData.card1} />
+          <QuoteCard {...quotesData.card2} />
+          <QuoteCard {...quotesData.card3} />
+          <QuoteCard {...quotesData.card4} />
+          <QuoteCard {...quotesData.card5} />
+          <QuoteCard {...quotesData.card6} />
+        </ul>
+        <ul aria-hidden="true" className={style["quote-container"]}>
+          <QuoteCard {...quotesData.card1} />
+          <QuoteCard {...quotesData.card2} />
+          <QuoteCard {...quotesData.card3} />
+          <QuoteCard {...quotesData.card4} />
+          <QuoteCard {...quotesData.card5} />
+          <QuoteCard {...quotesData.card6} />
+
+>>>>>>> 50739977a8a6d27ebc94dc04a3d98f98422cc9b8
         </ul>
       </div>
       

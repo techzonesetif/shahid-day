@@ -64,6 +64,31 @@ function Seo() {
         "@type": "Person",
         "name": "Ali Benmoussa"
       }
+<<<<<<< master
+    })}
+  </script>
+
+  {/* Technical & Link Tags */}
+  <link rel="canonical" href="https://shahid-day.netlify.app" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#a2fee38e" />
+  <meta name="msapplication-TileColor" content="#e6e6e6" />
+</Helmet>
+      <HeroSection /> 
+      <hr />
+      <EventSection />
+      <hr />
+      <MartyrsSection />
+      <hr />
+      <QuotesSection />
+      <hr />
+    </div>
+  )
+}
+=======
     
 
 
@@ -101,3 +126,4 @@ function Seo() {
 }
 // Memoize the entire page component
 export default memo(Home);
+>>>>>>> main
