@@ -1,7 +1,3 @@
-import { useEffect, useRef, useState } from 'react'
-import style from './page.module.css'
-import { Link } from 'react-router-dom'
-import { useParams,useLocation   } from "react-router-dom"
 
 const data=[
 
@@ -89,200 +85,242 @@ const data=[
 ]
 
 
+
+import { useEffect, useState,  useMemo, memo } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import style from './page.module.css';
+import PropTypes from 'prop-types';
+
+
+const MemoizedHelmet = memo(() => (
+  <Helmet>
+    <title>Historical Articles & Archives | Algerian History Resource Center</title>
+    <meta name="description" content="Access 500+ scholarly articles, rare documents, and multimedia archives chronicling Algeria's journey from antiquity to modernity." />
+    <meta name="keywords" content="Algerian archives, historical documents, research papers, FLN archives, Algerian revolution documents, Berber history" />
+    
+    <meta property="og:title" content="Historical Articles & Archives | Algerian History Resource Center" />
+    <meta property="og:description" content="Explore our extensive collection of primary sources and academic analyses of Algerian history." />
+    <meta property="og:image" content="https://shahid-day.netlify.app/assets/gallery-preview.jpg" />
+    <meta property="og:url" content="https://shahid-day.netlify.app/articles" />
+    <meta property="og:type" content="article" />
+    
+    <meta name="twitter:title" content="Historical Articles & Archives" />
+    <meta name="twitter:description" content="Dive into Algeria's past through curated collections of historical documents and expert analyses" />
+    
+    <link rel="canonical" href="https://shahid-day.netlify.app/articles" />
+    <link rel="alternate" type="application/rss+xml" href="https://shahid-day.netlify.app/rss/articles" />
+  </Helmet>
+));
+MemoizedHelmet.displayName = 'MemoizedHelmet';
+
+// const Card = memo(({ data }) => {
+//   const articleUrl = useMemo(
+//     () => `${data?.title?.replace(/\s+/g, '_')}`,
+//     [data?.title]
+//   );
+
+//   return (
+//     <>
+//         <Link to={`/articles/${articleUrl}`} className={`${style.card} ${style.card_des}`}>
+//         <img 
+//         loading="lazy" 
+//         src={data?.image} 
+//         className={style.card_image} 
+//         alt={data?.title}
+//       />
+//       <div className={style.card_body}>
+//         <h1>{data?.title}</h1>
+//         <p>{data?.description}</p>
+//       </div>
+//     </Link>
+//     <Link to={`/article/${articleUrl}`} className={`${style.card} ${style.card_phone}`}>
+//       <img 
+//         loading="lazy" 
+//         src={data?.image} 
+//         className={style.card_image} 
+//         alt={data?.title}
+//       />
+//       <div className={style.card_body}>
+//         <h1>{data?.title}</h1>
+//         <p>{data?.description}</p>
+//       </div>
+//     </Link>
+//     </>
+
+//   );
+// });
+
+// Card.displayName = 'Card';
+// Card.propTypes = {
+//   data:PropTypes.any, 
+// };
+const ArticlePreview = memo(() => {
+  const { link } = useParams();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const predata = useMemo(
+    () => data.find(article => article.title?.replace(/\s+/g, '_') === link),
+    [link]
+  );
+
+  return (
+    <main className={style.article_preview}>
+      {link && (
+        <>
+          <img
+            src={predata?.image}
+            className={`${style.preview_img} ${isLoaded ? style.loaded : ''}`}
+            onLoad={() => setIsLoaded(true)}
+            alt={predata?.title}
+          />
+          <h1>{predata?.title}</h1>
+          <div className={style.preview_body}>
+            <div className={style.listag}>
+              {predata?.tags?.map(tag => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+            <p className={style.preview_text}>{predata?.description}</p>
+          </div>
+          <div className={style.preview_footer}>
+            <div className={style.article__author}>
+              <h4>by: {predata?.author}</h4>
+              <span>{predata?.date}</span>
+            </div>
+            <Link 
+              to={`/article/${predata?.title?.replace(/\s+/g, '_')}`} 
+              className={style.button}
+            >
+              Read more
+            </Link>
+          </div>
+        </>
+      )}
+    </main>
+  );
+});
+ArticlePreview.displayName = 'ArticlePreview';
+ 
 export default function ArticlesPage() {
-  const location =useLocation()
+const [datas,setData]=useState([])  
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+    setData(data)
+  },[]);
 
-  useEffect(()=>{console.log(location)
+  const structuredData = useMemo(() => JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": data.map((article, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Article",
+        "headline": article.title,
+        "description": article.description,
+        "author": { "@type": "Person", "name": article.author },
+        "datePublished": article.date,
+        "image": article.image,
+        "keywords": article.tags.join(', '),
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://shahid-day.netlify.app/articles/${encodeURIComponent(article.title.toLowerCase().replace(/ /g, '-'))}`
+        }
+      }
+    }))
+  }), []);
 
-      document.querySelector('body').scrollTo({
-        top: 0    })     
-        
-  })
   return (
     <div className={style.page}>
-<Helmet>
-  <title>Historical Articles & Archives | Algerian History Resource Center</title>
-  <meta name="description" content="Access 500+ scholarly articles, rare documents, and multimedia archives chronicling Algeria's journey from antiquity to modernity." />
-  <meta name="keywords" content="Algerian archives, historical documents, research papers, FLN archives, Algerian revolution documents, Berber history" />
-  
-  {/* Open Graph */}
-  <meta property="og:title" content="Historical Articles & Archives | Algerian History Resource Center" />
-  <meta property="og:description" content="Explore our extensive collection of primary sources and academic analyses of Algerian history." />
-  <meta property="og:image" content="https://https://shahid-day.netlify.app/assets/gallery-preview.jpg" />
-  <meta property="og:url" content="https://https://shahid-day.netlify.app/articles" />
-  <meta property="og:type" content="article" />
-  
-  {/* Twitter */}
-  <meta name="twitter:title" content="Historical Articles & Archives" />
-  <meta name="twitter:description" content="Dive into Algeria's past through curated collections of historical documents and expert analyses" />
-  
-  {/* Structured Data for Collection Page */}
- 
-  <script type="application/ld+json">
-    {`
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "itemListElement": [
-          ${data.map((article, index) => `
-            {
-              "@type": "ListItem",
-              "position": ${index + 1},
-              "item": {
-                "@type": "Article",
-                "headline": "${article.title}",
-                "description": "${article.description}",
-                "author": {
-                  "@type": "Person",
-                  "name": "${article.author}"
-                },
-                "datePublished": "${article.date}",
-                "image": "${article.image}",
-                "keywords": "${article.tags.join(', ')}",
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": "https://https://shahid-day.netlify.app/articles/${encodeURIComponent(article.title.toLowerCase().replace(/ /g, '-'))}"
-                }
-              }
-            }
-          `).join(',')}
-        ]
-      }
-    `}
-  </script>
+      <MemoizedHelmet>
+        <script type="application/ld+json">
+          {structuredData}
+        </script>
+      </MemoizedHelmet>
 
-  {/* Links */}
-  <link rel="canonical" href="https://https://shahid-day.netlify.app/articles" />
-  <link rel="alternate" type="application/rss+xml" href="https://https://shahid-day.netlify.app/rss/articles" />
-</Helmet>
-
-    <aside className={style.side_bar}>
-    {/* <Link to={`/article`} className={style.card}>
-    Reads
-</Link> */}
+      <aside className={style.side_bar}>
         <h1>Must Reads</h1>
         <main className={style.article_list}>
-          {data.map((e)=>  <Card key={e.title} data={e}/>)}
+          {datas.map(article => (
+            <Card key={article.title} data={article} />
+          ))}
         </main>
-    </aside>
-      <Article_preview/>
+      </aside>
+      <ArticlePreview />
     </div>
-  
-  )
+  );
 }
 
 
-export function Card({data}){
-  const img=useRef(null)
-  useEffect(()=>{
-    // img.current.style.setProperty('--bg-image', `url(/6348321.jpg)`)
-console.log()
-  })
-  return(
-    <>
-    <Link to={`/articles/${data?.title?.replace(/\s+/g, '_')}`} className={`${style.card} ${style.card_des}`}>
-    <img loading="lazy"  src={data?.image}  ref={img} className={style.card_image} /> 
-    <div className={style.card_body}>
-    <h1>{data?.title}</h1>
-    <p>{data?.description}</p>
-    </div>
-    </Link>
-    <Link to={`/article/${data?.title?.replace(/\s+/g, '_')}`} className={`${style.card} ${style.card_phone}`}>
-    <img loading="lazy"  src={data?.image}  ref={img} className={style.card_image} /> 
-    <div className={style.card_body}>
-    <h1>{data?.title}</h1>
-    <p>{data?.description}</p>
-    </div>
-    </Link>
-    </>
+
+
+
+// const useViewport = () => {
+//   const [isMobile, setIsMobile] = useState(false);
+
+//   useEffect(() => {
+//     const checkMobile = () => setIsMobile(window.innerWidth <= 900);
     
-  )
-}
+//     // Initial check
+//     checkMobile();
+    
+//     // Debounce resize handler
+//     const debounce = (fn, ms) => {
+//       let timeout;
+//       return () => {
+//         clearTimeout(timeout);
+//         timeout = setTimeout(fn, ms);
+//       };
+//     };
 
+//     const handleResize = debounce(checkMobile, 100);
+    
+//     window.addEventListener('resize', handleResize);
+//     return () => window.removeEventListener('resize', handleResize);
+//   }, []);
 
+//   return { isMobile };
+// };
 
- function Article_preview(){
+const Card = memo(({ data }) => {
+  const [isMobile,setisMobile] = useState();
+  const articleUrl = useMemo(
+    () => data?.title?.replace(/\s+/g, '_'),
+    [data?.title]
+  );
 
-  const  link = useParams().link;
-  // const loadedRef = useRef(false);
-  const location =useLocation()
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [predata,setPredata]=useState({})
+  // Single dynamic link based on viewport
+  const targetPath = useMemo(
+    () => isMobile? `/article/${articleUrl}` : `/articles/${articleUrl}`,
+    [isMobile, articleUrl]
+  );
 
-  useEffect(()=>{
-    setPredata(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
-  })
-  return(
-   
-    <main className={style.article_preview}>
-       {/* <Helmet>
-        <title>{predata.title} </title>
-        <meta name="description" content={predata.description} />
-        <meta name="author" content={predata.author} />
-        <meta name="keywords" content={predata.tags.join(", ")} />
-        <meta property="og:title" content={predata.title} />
-        <meta property="og:description" content={predata.description} />
-        <meta property="og:image" content={predata.image} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={window.location.href} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={predata.title} />
-        <meta name="twitter:description" content={predata.description} />
-        <meta name="twitter:image" content={predata.image} />
-      </Helmet> */}
-      {link&&<>
-        <img
-      src={predata?.image}
-      style={{ filter: isLoaded ? 'blur(0px) grayscale(0%)' : 'blur(10px) grayscale(140%);',
-               transition: 'filter .6s' ,
-               overflow:'hidden' ,
-              
-              }}
-      onLoad={() => setIsLoaded(true)}
-      onError={(e)=>{
-        // e.currentTarget.src='/6348321.jpg';
-        e.currentTarget.style=`
-      background-color: rgb(${Math.random()*150},${Math.random()*150},${Math.random()*150});
-        `
-        e.currentTarget.onerror=null;
-      }}
-       className={style.preview_img} />
-               <h1>   {predata?.title}</h1>
-      <div className={style.preview_body}>
-        <div className={style.listag}>
-          {predata?.tags?.map(t=><span key={t}>{t}</span>)}
-          </div>
-        
-        <p className={style.preview_text}>
-          {predata?.description}
-        </p>
+  useEffect(()=>{setisMobile(window.innerWidth <= 900)},[])
+  return (
+    <Link 
+      to={targetPath} 
+      className={`${style.card} ${isMobile ? style.card_phone : style.card_des}`}
+    >
+      <img 
+        loading="lazy" 
+        src={data?.image} 
+        className={style.card_image} 
+        alt={data?.title}
+      />
+      <div className={style.card_body}>
+        <h1>{data?.title}</h1>
+        <p>{data?.description}</p>
+      </div>
+    </Link>
+  );
+});
 
-      </div>  
-      <div className={style.preview_footer}>
-      
-      <div  className={style.article__author}>
-            {/* <img loading="lazy"  src='/6348321.jpg'   className={style.author__avatar} />  */}
-            <h4>
-            by: {predata?.author}
-            </h4>
-            <span> {predata?.date}</span>
-        </div>
-        <Link to={`/article/${predata?.title?.replace(/\s+/g, '_')}`} className={style.button}>
-            read more      
-        </Link>
-</div>
-      </>
-      }
-      
-      </main>
-  )
-}
-
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet'
+Card.displayName = 'AdaptiveCard';
 Card.propTypes = {
-  data: PropTypes.any, 
-};
-Article_preview.propTypes = {
-  data: PropTypes.any, 
+  data: PropTypes.shape({
+    title: PropTypes.string,
+    image: PropTypes.string,
+    description: PropTypes.string,
+  }).isRequired,
 };
