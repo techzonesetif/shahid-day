@@ -622,36 +622,3 @@ a.club:hover {
 }
 
 
-/* ----- Custom Scrollbar (from File 2) ----- */
-/* ::-webkit-scrollbar {
-  width: 20px;
-}
-
-::-webkit-scrollbar-track {
-  background: #e0e0e0;
-  margin: 5px;
-  padding: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
-  border-radius: 10px;
-  border: 8px solid transparent;
-  background-clip: padding-box;
-  background-color: #aaaaaa98;
-  cursor: grab;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to top, #aaa, #aaa);
-  border: 5px solid transparent;
-  transition: 1s all;
-  background-clip: padding-box;
-}
-
-::-webkit-scrollbar-thumb:active {
-  background: linear-gradient(to top, var(--primary-color), var(--primary-color));
-  border: 6px solid transparent;
-  cursor: grabbing;
-  background-clip: padding-box;
-} */
