@@ -556,6 +556,11 @@ footer {
 .footer-left {
   flex: 1;
 }
+.footer-left>*>* {
+  cursor: pointer;
+}
+
+
 
 .logo-footer {
   width: 100%;
@@ -589,6 +594,8 @@ footer {
 .footer-right ul {
   text-align: left;
   list-style-type: none;
+  /* cursor: pointer; */
+
 }
 
 .footer-right .content {
@@ -611,6 +618,7 @@ footer {
   font-size: 1.4rem;
   font-weight: 700;
   color: #121212;
+  cursor: pointer;
 }
 .logo-footer:hover {
   color: var(--primary-color);
@@ -623,6 +631,8 @@ footer {
 a.club {
   font-weight: 700;
   text-decoration: underline;
+  cursor: pointer;
+
 }
 a.club:hover {
   color: var(--primary-color);

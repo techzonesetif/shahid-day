@@ -87,7 +87,138 @@ const data=[
     "text": "Policy changes are needed to address the global challenges posed by climate change."
   }
 ]
+const md=`
+# Heading 1  
+## Heading 2  
+### Heading 3  
+#### Heading 4  
+##### Heading 5  
+###### Heading 6  
 
+**Bold** *Italic* ***Bold & Italic*** ~~Strikethrough~~ \`Inline Code\`  
+==Highlighted== [Link](https://example.com) H<sub>2</sub>O E=mc<sup>2</sup>  
+
+---
+
+### Lists  
+- Unordered Item 1  
+- Unordered Item 2  
+  - Nested Item  
+1. Ordered Item  
+2. Ordered Item  
+
+- [x] Task Completed  
+- [ ] Task Pending  
+
+---
+
+### Table  
+| Syntax      | Description | Alignment   |  
+|-------------|-------------|:-----------:|  
+| Header      | Title       | Centered    |  
+| Paragraph   | Text        | Left-aligned|  
+
+---
+
+### Code  
+\`\`\`python  
+def hello():  
+    print("Hello, World!")  
+\`\`\`  
+
+---
+
+> **Blockquote**: *"This is a blockquote spanning multiple lines."*  
+> ― Author  
+
+---
+
+### Links & Images  
+[Reference Link][1]  
+![Placeholder](https://via.placeholder.com/150 "Image Title")  
+
+---
+
+### Footnotes  
+Here's a footnote[^1].  
+
+[^1]: Footnote details.  
+
+---
+
+### Horizontal Rules  
+***  
+___  
+
+### Emojis & HTML  
+:rocket: :sparkles:  
+<button>Click Me</button>  
+
+[1]: https://example.com  
+\`\`\`
+# Heading 1  
+## Heading 2  
+### Heading 3  
+#### Heading 4  
+##### Heading 5  
+###### Heading 6  
+
+**Bold** *Italic* ***Bold & Italic*** ~~Strikethrough~~ \`Inline Code\`  
+==Highlighted== [Link](https://example.com) H<sub>2</sub>O E=mc<sup>2</sup>  
+
+---
+
+### Lists  
+- Unordered Item 1  
+- Unordered Item 2  
+  - Nested Item  
+1. Ordered Item  
+2. Ordered Item  
+
+- [x] Task Completed  
+- [ ] Task Pending  
+
+---
+
+### Table  
+| Syntax      | Description | Alignment   |  
+|-------------|-------------|:-----------:|  
+| Header      | Title       | Centered    |  
+| Paragraph   | Text        | Left-aligned|  
+
+---
+
+### Code  
+\`\`\`python  
+def hello():  
+    print("Hello, World!")  
+Blockquote: "This is a blockquote spanning multiple lines."
+― Author
+
+Links & Images
+
+Placeholder
+
+Footnotes
+Here's a footnote.
+
+Horizontal Rules
+Emojis & HTML
+:rocket: :sparkles:
+<button>Click Me</button>
+
+Copy
+*[2987 characters]*  
+
+This covers headings, text formatting, lists (unordered/ordered/task), tables, code blocks, blockquotes, links, images, footnotes, horizontal rules, emojis, and embedded HTML. Adjust as needed!      
+            
+            
+            
+            
+            
+            
+            
+            `
 export default function Article() {
   const  link = useParams().link;
   // const loadedRef = useRef(false);
@@ -126,7 +257,11 @@ export default function Article() {
             </div>
         </header>
         <Styledmarkdown >
-            {article?.text}
+            {md
+            
+            
+            
+            }
         </Styledmarkdown>
         <div className={style.article_meta}>
             <div>By <span>{article?.author}</span></div> 
