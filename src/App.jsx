@@ -15,7 +15,7 @@ function App() {
     // Wrap your Routes in a Suspense boundary
    
       <Routes>
-        <Route path="/" element={ <Suspense fallback={<div>Loading...</div>}><Layout /></Suspense>}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Suspense fallback={<div>Loading...</div>}><Home /></Suspense>} />
           <Route path="/articles" element={<Suspense fallback={<div>Loading...</div>}><ArticlesPage /></Suspense>} />
           <Route path="/articles/:link" element={<Suspense fallback={<div>Loading...</div>}><ArticlesPage /></Suspense>} />
