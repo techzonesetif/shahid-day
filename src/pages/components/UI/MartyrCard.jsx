@@ -26,7 +26,7 @@
 // }
 
 // export default MartyrCard;
-import { memo, useMemo } from 'react';
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -34,18 +34,7 @@ import { Link } from 'react-router-dom';
 import style from '../../home/page.module.css';
 
 const MartyrCard = memo(function MartyrCard({ title, description, date, img, slug }) {
-  // Memoize formatted date
-  const formattedDate = useMemo(() => {
-    try {
-      return new Date(date).toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-    } catch {
-      return date; // Fallback to raw date string
-    }
-  }, [date]);
+ 
 
   return (
     <section 
@@ -62,26 +51,27 @@ const MartyrCard = memo(function MartyrCard({ title, description, date, img, slu
         height={500}
         decoding="async"
       />
-      
+     
       <div className={style["content-section"]}>
         <h3 
           id={`martyr-title-${slug}`}
           className={style['title']}
         >
-          {title}
-        </h3>
-        
-        <p className={style['desc']}>
-          {description}
-        </p>
-        
-        <div 
+         <span>{title}</span> 
+          <div 
           className={style["date-section"]}
           aria-label="Date of martyrdom"
         >
           <FontAwesomeIcon icon={faCalendar} aria-hidden="true" />
-          <time dateTime={date}>{formattedDate}</time>
+          {date}
         </div>
+        </h3>
+        
+        {/* <p className={style['desc']}>
+          {description}
+        </p> */}
+        
+        
         
         <Link 
           to={`/martyrs/${slug}`}
