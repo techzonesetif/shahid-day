@@ -1,106 +1,123 @@
-import style from '../home/page.module.css';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import style from '../home/page.module.css';
+import PropTypes from 'prop-types';
+
+// Memoized navigation items to prevent unnecessary re-renders
+const NavItems = memo(({ handleNavigation, handleMenuBtn }) => {
+  const navItems = useMemo(() => [
+    { id: 'home', target: '#hero', label: 'Home' },
+    { id: 'articles', path: '/article', label: 'Articles' },
+    { id: 'events', target: '#events-section', label: 'Events' },
+    { id: 'martyrs', target: '#martyrs-section', label: 'Martyrs' },
+    { id: 'quotes', target: '#quote-section', label: 'Quotes' }
+  ], []);
+  NavItems.displayName = 'NavItems';
+  NavItems.propTypes = {
+    handleNavigation:PropTypes.any, handleMenuBtn: PropTypes.any, 
+  };
+  return (
+    <>
+      {navItems.map((item) => (
+        <li key={item.id} className={style["nav-item"]}>
+          {item.path ? (
+            <Link to={item.path} onClick={handleMenuBtn}>
+              <h2>{item.label}</h2>
+            </Link>
+          ) : (
+            <button
+              onClick={() => {
+                handleNavigation(item.target);
+                handleMenuBtn();
+              }}
+              aria-label={`Scroll to ${item.label}`}
+            >
+              <h2>{item.label}</h2>
+            </button>
+          )}
+        </li>
+      ))}
+    </>
+  );
+});
 
 function Header() {
   const [menuSvg, setMenuSvg] = useState(faBars);
   const [isActive, setIsActive] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  const handleMenuBtn = () => {
+  // Memoized menu toggle handler
+  const handleMenuBtn = useCallback(() => {
     setMenuSvg(prev => (prev === faBars ? faXmark : faBars));
     setIsActive(prev => !prev);
-  };
+  }, []);
 
-  const handleNavigation = (targetSection) => {
-    navigate('/');
-    if(targetSection === '#')
-      return
+  // Optimized navigation handler with proper cleanup
+  const handleNavigation = useCallback((targetSection) => {
+    if (location.pathname !== '/') {
+      navigate('/', { replace: true });
+    }
 
-    setTimeout(() => {
-      const section = document.querySelector(targetSection);
+    const scrollToSection = () => {
+      const section = targetSection === '#hero' 
+        ? document.documentElement 
+        : document.querySelector(targetSection);
+      
       if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+        section.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       }
-    }, 500); 
-  };
+    };
 
+    const timer = setTimeout(scrollToSection, 50);
+    return () => clearTimeout(timer);
+  }, [navigate, location.pathname]);
+
+  // Close menu on route change
   useEffect(() => {
-  }, [menuSvg]);
+    setIsActive(false);
+    setMenuSvg(faBars);
+  }, [location.pathname]);
 
   return (
-    <header>
-      <div className={style["navbar"]}>
-        <div className={style["container"]}>
+    <header aria-label="Main navigation">
+      <div className={style.navbar}>
+        <div className={style.container}>
           <div className={style["site-logo"]}>
-            <a href={'#'}>
-              <p className={style["logo"]}>Algerian History</p>
-            </a>
+            <button 
+              aria-label="Scroll to top"
+              onClick={() => handleNavigation('#hero')}
+            >
+              <p className={style.logo}>Algerian History</p>
+            </button>
           </div>
           <button
             className={style["menu-toggle"]}
             aria-label="Toggle navigation menu"
             onClick={handleMenuBtn}
+            aria-expanded={isActive}
           >
-            <FontAwesomeIcon icon={menuSvg} key={menuSvg.iconName} />
+            <FontAwesomeIcon 
+              icon={menuSvg} 
+              key={menuSvg.iconName}
+              aria-hidden="true"
+            />
           </button>
         </div>
-        <nav>
-          <ul className={`${style["nav-list"]} ${isActive ? style["active"] : ""}`}>
-            <li className={style["nav-item"]}>
-              <a href={'#'}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigation('#');
-                  handleMenuBtn()
-                }}
-              >
-                <h2>Home</h2>
-              </a>
-            </li>
-            <li className={style["nav-item"]}>
-              <Link to={'/article'}>
-                <h2>Articles</h2>
-              </Link>
-            </li>
-            <li className={style["nav-item"]}>
-              <a
-                href="#events-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigation('#events-section');
-                  handleMenuBtn()
-                }}
-              >
-                <h2>Events</h2>
-              </a>
-            </li>
-            <li className={style["nav-item"]}>
-              <a
-                href="#martyrs-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigation('#martyrs-section');
-                  handleMenuBtn()
-                }}
-              >
-                <h2>Martyrs</h2>
-              </a>
-            </li>
-            <li className={style["nav-item"]}>
-              <a
-                href="#quote-section"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavigation('#quote-section');
-                  handleMenuBtn()
-                }}
-              >
-                <h2>Quotes</h2>
-              </a>
-            </li>
+        <nav aria-label="Primary navigation">
+          <ul 
+            className={`${style["nav-list"]} ${isActive ? style.active : ""}`}
+            role="menubar"
+          >
+            <NavItems 
+              handleNavigation={handleNavigation}
+              handleMenuBtn={handleMenuBtn}
+            />
           </ul>
         </nav>
       </div>
@@ -108,4 +125,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default memo(Header);

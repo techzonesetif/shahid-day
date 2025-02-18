@@ -1,6 +1,6 @@
 import { useEffect, useState,  } from 'react'
 import style from './page.module.css'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Styledmarkdown from '../../components/markdown/Styledmarkdown'
 import { Helmet } from 'react-helmet'
 const data=[
@@ -91,21 +91,21 @@ const data=[
 export default function Article() {
   const  link = useParams().link;
   // const loadedRef = useRef(false);
-  const [article,setArticle]=useState({})
+  const [article,setArticle]=useState(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
 
   useEffect(()=>{
     setArticle(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
-  },[link])
-  useEffect(()=>{
     document.querySelector('body').scrollTo({top: 0})     
-  })
+
+  },[link])
+
   return (
     <div className={style.page}>
  <Helmet>
         <title>{article.title} </title>
         <meta name="description" content={article.description} />
         <meta name="author" content={article.author} />
-        <meta name="keywords" content={article.tags.join(", ")} />
+        <meta name="keywords" content={article?.tags?.join(",")} />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:image" content={article.image} />
