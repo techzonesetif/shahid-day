@@ -3,9 +3,8 @@ import style from '../../home/page.module.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faCalendar } from "@fortawesome/free-solid-svg-icons";
 
-function EventCard(props) {
+function EventCard({title, description, date, link, img}) {
     
-    const {title, description, date, link, img} = props;
 
     return (
         <div className={style["event-card"]}>
