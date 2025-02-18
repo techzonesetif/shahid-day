@@ -95,10 +95,10 @@ export default function Article() {
 
   useEffect(()=>{
     setArticle(data.find(acrticle => acrticle.title?.replace(/\s+/g, '_') === link))
-  },[link])
-  useEffect(()=>{
     document.querySelector('body').scrollTo({top: 0})     
-  })
+
+  },[link])
+
   return (
     <div className={style.page}>
  <Helmet>
