@@ -1,84 +1,60 @@
 export  let data=[
-  
-    {
-      "title": "Renewable Energy Trends",
-      "author": "Alice Smith",
-      "date": "2023-05-01",
-      "image": "https://picsum.photos/800/450?random=1",
-      "tags": ["energy", "renewable"],
-      "description": "A deep dive into the latest trends in renewable energy.",
-      "text": "# Renewable Energy\n\nRenewable energy is transforming the global energy landscape..."
-    },
-    {
-      "title": "Advancements in Solar Technology",
-      "author": "Bob Johnson",
-      "date": "2023-06-10",
-      "image": "https://picsum.photos/800/450?random=2",
-      "tags": ["solar", "technology"],
-      "description": "Exploring the breakthroughs in solar panel efficiency.",
-      "text": "Solar panels are becoming more efficient thanks to new materials and designs."
-    },
-    {
-      "title": "Wind Energy: Harnessing Nature",
-      "author": "Carla Diaz",
-      "date": "2023-07-20",
-      "image": "https://picsum.photos/800/450?random=3",
-      "tags": ["wind", "sustainability"],
-      "description": "An overview of wind energy and its role in sustainable power.",
-      "text": "Wind energy has the potential to power millions of homes."
-    },
-    {
-      "title": "Electric Vehicles and Energy Storage",
-      "author": "David Lee",
-      "date": "2023-08-05",
-      "image": "https://picsum.photos/800/450?random=4",
-      "tags": ["electric vehicles", "energy storage"],
-      "description": "How electric vehicles are reshaping energy consumption and storage.",
-      "text": "Electric vehicles represent a shift towards a cleaner, more efficient future."
-    },
-    {
-      "title": "Hydrogen: The Next Big Thing?",
-      "author": "Eva Martinez",
-      "date": "2023-09-15",
-      "image": "https://picsum.photos/800/450?random=5",
-      "tags": ["hydrogen", "innovation"],
-      "description": "Investigating hydrogen as a sustainable fuel alternative.",
-      "text": "Hydrogen fuel cells could be key in the transition to a sustainable economy."
-    },
-    {
-      "title": "Smart Grids and Future Infrastructure",
-      "author": "Frank Zhao",
-      "date": "2023-10-10",
-      "image": "https://picsum.photos/800/450?random=6",
-      "tags": ["smart grid", "infrastructure"],
-      "description": "The integration of smart grids into our modern infrastructure.",
-      "text": "Smart grids are revolutionizing the way we manage energy distribution."
-    },
-    {
-      "title": "Sustainable Urban Development",
-      "author": "Grace Kim",
-      "date": "2023-11-01",
-      "image": "https://picsum.photos/800/450?random=7",
-      "tags": ["urban", "sustainability"],
-      "description": "How cities are adapting to sustainable practices.",
-      "text": "Urban development is increasingly incorporating green building techniques."
-    },
-    {
-      "title": "Innovations in Energy Efficiency",
-      "author": "Henry Adams",
-      "date": "2023-12-05",
-      "image": "https://picsum.photos/800/450?random=8",
-      "tags": ["efficiency", "innovation"],
-      "description": "Exploring new innovations that improve energy efficiency across industries.",
-      "text": "Energy efficiency improvements are crucial for reducing global consumption."
-    },
-    {
-      "title": "Climate Change and Energy Policy",
-      "author": "Ivy Nguyen",
-      "date": "2024-01-20",
-      "image": "https://picsum.photos/800/450?random=9",
-      "tags": ["climate change", "policy"],
-      "description": "An analysis of the relationship between climate change and current energy policies.",
-      "text": "Policy changes are needed to address the global challenges posed by climate change."
-    }
+  {
+    "title": "title",
+    "author": "mounir habbas",
+    "date": "2025-02-19",
+    "image": "https://picsum.photos/800/450",
+    "tags": [
+      "tag1",
+      "taf2",
+      "sd"
+    ],
+    "description": "test",
+    "text": "test test test"
+  },
+  {
+    "title": "Reggane, Algeria: A Historical Overview of the Sahara's Nuclear Past",
+    "author": "John Doe",
+    "date": "2023-04-15",
+    "image": "https://example.com/reggane-sahara.jpg", // Replace with a relevant image
+    "tags": [
+      "Nuclear Testing",
+      "Sahara Desert",
+      "French Colonialism"
+    ],
+    "description": "A deep dive into Reggane's role in Cold War nuclear history and its modern-day significance.",
+    "text": "## Reggane, Algeria: Between History and Horizon\n\nReggane, a remote town in Algeria's Sahara Desert, is **infamous for France's nuclear tests** during the 1960s. \n\n### Key Historical Events\n- **1960**: France detonated its first atomic bomb, *Gerboise Bleue*, near Reggane.\n- **Legacy**: Radiation contamination displaced local Tuareg communities and left long-term environmental damage.\n\n### Modern Context\n- **Tourism**: The Sahara's stark beauty attracts adventurers to Reggane's dunes and ancient trade routes.\n- **Solar Energy**: Algeria now invests in solar farms, leveraging the Sahara's sunlight to offset Reggane's dark history.\n\n### Environmental Impact\n- Studies continue to monitor radiation levels, with advocacy groups pushing for cleanup and reparations.\n\n*Reggane symbolizes both humanity's recklessness and resilience.*"
+  },{
+    "title": "The Future of Sustainable Energy",
+    "author": "John Doe",
+    "date": "2023-04-15",
+    "image": "https://picsum.photos/800/450",
+    "tags": [],
+    "description": "",
+    "text": "\n## Reggane, Algeria: Between History and Horizon\n\nReggane, a remote town in Algeria's Sahara Desert, is **infamous for France's nuclear tests** during the 1960s. \n\n### Key Historical Events\n- **1960**: France detonated its first atomic bomb, \\`Gerboise Bleue\\`, near Reggane.\n- **Legacy**: Radiation contamination displaced local Tuareg communities and left long-term environmental damage.\n\n### Modern Context\n- **Tourism**: The Sahara's stark beauty attracts adventurers to Reggane's dunes and ancient trade routes.\n- **Solar Energy**: Algeria now invests in solar farms, leveraging the Sahara's sunlight to offset Reggane's dark history.\n\n### Environmental Impact\n- Studies continue to monitor radiation levels, with advocacy groups pushing for cleanup and reparations.\n\n*Reggane symbolizes both humanity's recklessness and resilience.*"
+  },
+  {
+    "title": "Reggane: Algeria's Desert Town with a Radiant Past",
+    "author": "Amine Bensalem",
+    "date": "2025-02-19",
+    "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhMVFRUVFRUVFRcVFxcVFRUXFRUXFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAK8BIAMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAABAgADBAUGB//EAEEQAAEDAwIDBgMFBQYGAwAAAAEAAhEDEiEEMQVBUQYTImFxgTKRoRRCkrHRUoLB4fAVI1PD0tMHFmJyc/EzRFT/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8AeUbkkqSgeVJShykoGlGUkpggKUlBxSEoDKBKkoFBFFFEBCKUJ2oIE6VZWi0jqhhuBzcfhHqUFACytNo6j/gaT9B8zhbqnp9PSjAc4DJORPOBssY8aE+X8EGPS4PVJ8UN9TP5LIbwPm6pjyGVaeKAQ6DBMeU9J+aerxO2I2dz/ggR3BWftu+itZwJh++6PQfmlGtaSLjM46fNZlNwEkGecD8kGBX4I8ZY4OHyP6Kg8Nqj7h9oK27nSA4ksBG3/vZB9Qtghwt89/5oNAWoQuhq6BlSXTDj0z8wtRqdMWGCQcTIQYsIwnUhAiIRIRAQEKwJWhWQgjU6UBNKCQmSooOalCUYQIQEFSUIUhA0pmlJCYBAXJYTwhCBVE8IQgVCE8KQgVM1EBORhBfoKQLvFEDeeayNdxW0wzAG8LCpExlU1WH1QK7U3EyTnZVgmd0RpSciPTZK8DlugudrTba7O3tGyQ6oxHTZU06VxMkDpPNW6jRFoBkGdgN9kCO1B3nzW44TrDEkSfWAPNaIU/JZ2ntxIJHSYlBsKmtc4E9N8iN+nNZ+k4lNM3x6HmFrK7aXdktba6REyfZYtO49EG94dqjMAgTsDy9Bz2V3FAZZJnB/NavR0HMcJls77gws2vVLzPsPRBQAmhFEIFtTBqMJwEChOpaPl9E8IFARhMGp7UFYQVlqlqDmLVLVdajCCm1S1XQpagptTBqstTBqCu1S1XBqlqCm1S1XWohqCi1EMV4aiGIKWsThisDU4CCkMUsVwCD4AlBiVWQsVzsq2rJKV1IoKyxRwPU4WRSomNira1CIznp/NBjt2zkp7ZTmnhWaYSgNKgTywsyhRDTsCrabIVgagSCd1LVcGohiCm1ENV1qNqCoNTBqsDUwagQNTWpw1OGIK2tT2KwNTWoKQ1GxWwpCDloUtTKIFtUtThSUC2pg1RMEEtUATQjCBYUhPCkIEhMAjajCCAIwoiEEARfAGVAE4CDXVqpOwAU0lMEiXRlb/QcIY4XPuztm2P1WQzhtJhgMD/2iXeLHlj6IMAWlpAzywtRWZa6DI9V0NSoym6O6tKxuJVKbouaScbTKDVPb7pqTEWUjdAaQOU4WWylJgb9EFrArWtQY1WAIAGogJgEQECwjCaEYQLCYBMGo2oAGpwFAEyBmtRACjUSgEIwFIUhByqEJwEwagrAUhWEIQgSE7QoGpgEBhMAiAmAQJClqstRhBWQpCuUIQUhqYNThqMIFtTBqYNULJwgx6mtdcPFscH+ayf7ScJt6znBMnaeaofpRuFrnjPNB0HePqgF1jY85d5QPdZlGmQ2HticbZ9QudoXkTdsff+v1Wyoaqo2ZqHAmNxAHRBgamqb3MyM+gjkc+S6HhJAZicdIJ856K7h9Zr2zALhgyPFjGZWNqNE4uJayB7fTKC3XGm5tzYukbbrBATBqYMQLCIantTBqBAEYTQjCAAIwjCMIFCYBSEzQgLUwCgaiEAhSEYRQczaparoUtQVBqlqthSEFVqIarLU4agqAThqcNTWoK7UbVZajCCsNRhPCkIEtRtThqMIAGqWp0QEGJqakCFrCxxIgZOwG5W9ZpQ4/rsrqfBgDd3ueVoGJ8pQarSyweKkTzmC0n3OCttT1gLJtDR+I5x6J63DGEQaj2k7BxEHziP4pW8Ie0GHtcOjgRH4T6IMd+irUj3jXte2CZJAPngYKfT6io8y5zschgeSyKegNhugRtaZaQixvLogBEmUwanDUwagrtUsVwCMIKC1S1XWoWoK7VITwiGoEhEJ7EwYgQJ0wYnDQgqQV8IEIOaUhWWqWoEAUhPapagRM0I2p2tQQBNCICKBYQhOgQgVCE0KIIAmCATAIJCjiAJOw6JwEtQ8huZ32wOaBqNc1GQwC4DZxOSMiQBG/olo8QZP94GXDnGZ8se61VauGu8MHrGI8oWO9xIJGCg354o12McreQzuD1Hsjp9W5hyWuaP2bnEeVxELQt0tRzfDJHQOge45e6y+H6Oq4hrrgyeu/tzQdKKzYGMOxMY984VBZBhPpqXdyI8PmfzH0Ur6hjYltwPNgMDyMIAAnCEg7THmnAQCFAEwCICBYULU8IwgqsRDVbaiWoKw1MAmDUwCAAKWpwE2EFVqNqsUQc0hCKiAKQmCkIAiFITNCCQpCZQoFURUQKUE0KQgAThCE4CAgLA4kHTifpH6rZALC4g8Y8uf8EGnqAcx7ql7yMA4WVUc53wtLvQSsUUi7O3mgv0Ooh2RcBuCAfeCtqOIMMYd+Igew5LQvdYZJ9CrdNUuEz19kHSN4qAPhBAgN2JI6zy9Fm0nseB8IOMNMx0XL0W7ZW20NN28/oUG4cyEQhdsiEDQpCgKYIBCICYIoAEYRCYIFARhGEwCBIUhPapagSFE9qkIOV74dVO/b1V32TzKP2XzKCgVm9fzR75vVXDSjqVPso6oKe9HVMKg/oFWfZR5qylpgEFPeDqmDgsruGnkmbSAQYkhAvHVZwaFXU07SgxLwp3gWaGNiIwl+zs5j6oMa8IioOqyjRpn7oTtosiIQYwd5rE11IujBOOWVtu6p/sj6pmuA2ACDS0GuAuw1owbfiJ8wCD81q9c+0kwcnHnldaWjON1j1tIx0SNkHD1y524IVmkkYjBXbM0rB90Z39k76DDBtGNsDCDm6VB7d2kLeaGqw+HbpkZWcWhwgoM0lMfdCANB2gp7SskFS4IMUO8j8lYHYmMK4PUFTqEGP9pHml+052EfVXOa3oEsM8kAGo8kRqfIqNs6j5hNLRzH0QQVjzaiK56Iis3mR8wp3rOrfmEDB58lC93kp37P2h80p1LeqA3uUvcl+0tQOqag4D+0Kn+IoOIVf8T+vkuPZ2lrk5ptaOpeMfJ5WbpOPST3lRrRGIccn5lB0g19X/EPz/kp/aFX9s/MLVUuMaePFqDPkXfwCDuLUp8NSoRyIug/RBt/7Qq/tn5hI7izw5rO98TzDGyA5x6NbufZc7qOPOYxz+51HhaXeItAwJyZMBc/wLXN1WqGprvax1MANnnv8OeU7k8wg9T1FDWU2d4+5rRuS4Y5bLScb7QO0poiq+p/fzZbB2IBJzjJGN8rHoPpB4e/UVX2yWtqVCaYu2IAPyJ6rruCu0tEB9KhSktudVjJc6bgHOkgSM5CDnuL8VqUGFxq5EFwvktB+85oMx57ZVHBeMVq7C9ry5oMBwJy7ctGc46bY6q+vxLRV6tQvosDwHUnuDO7DgORtgvBgRM4I6p+GUtC6sylTotpVbHw5gsBDSLotw4mBuOSDH0fHxVv7uqT3ZDXkktAJJGS6MS05V9Hi9zDUFWWAkF4cCJGDHiz/FcPx7jdFr9RQbRYx99Wk98XOcQSxzhPUTC6PspR0VCk3TVxe6o1tR4qgGi7Ae0ifCBuMzlpnkg2ek7TaWrinqbnROS5oAkCXEgAZIHurX8VaGucazIaQ10VAbS74QQ2SCZ2Ww1ev09hovosLLXOYAA0EASQCPhOxBHn0XDca7HUabnd08t0+oaLRLnFpaQ4tHWNxJPxbYlB1+g1ZqgubUBAMHxkwR1gYxHzTVNY1r+7NZveWl4Zf4y0TkNiTsfkVx/BOCmjWZ9n1LmCc03EBtQgHwl/IEnmDE+Spa+vQqO1WuqA1KZ7tlrg0d24ybbRLx4ufQoOq4Px3S6s20nvc8NucHNItEgZOwOdp6rNoajTve6m2ox1RmHMBFw6y2VzjeKMouMNsLiXEN+9JkvxyJMz5rQabV0W1n16Bc2qxz3Op945xq7lzwC6Z3MHf8w9Hr1GU2Oe4uDWAuccwGtBJO+cArWcI7Q6fUx3b6kkkAEETGd9thtMrD4Rx1htqVKdxrh8OJ8NgsbaG82n3yCti/XUXtbTFMUzWDqTalPwlptLgYHMR7ZQDiXHdNQIFSo+SY8ILsxMYG/kMrN0+tovm2rt1NvQfeiMkD3heZcW4pqNLUGkq2ljIfScAWnn42nJBm7nvO6yOztWlWquFb4HDxkSHPOLQ52CNgf3Qg9MABzcY5ETB9CDlMKM7E49Z/NaOpT0z+5t75jWkkWPLxDfueObQd5BBwcq7XV9Jpu81DadQ16zWDL3X1fCSzBkDDDMZj1QbX7P5n5/z9EzdL6n95eZt7SGvXZWDoLLQxsua3M4LZhx3OY5dFstV2xqMrBwN7Ba1zAADdaQS0ifD4wTPQe4d07SDp8yp9kb0+v8lw1ftKBWNZl7SSynaWh7XSyQZBaeRAk8jtK6TT62q9svHdnm2Rc3nJkQNwR5FBtRpm9B85Vgpx0+ZCxu8nN87c3TnOAD6J++Dse2TUG2DgnyQZIounl9T/XJP3Dudvyz6QVqaHEBPdtY2uXEh01QxlMDkQSSeYiCfzQfxmw2sNNtQFod3pIG0m2AeoxKDdik6dmR6fXb1TAZgin7kfQbrW1uJ0ZuwcTAMeRicDfZJp+M03G0Bw9XTMemyDa1Kf8A2ew/VVMH/j+bZWPV1tHm0+phx/NGjrdMckv+UfQFB5C7sVqSImj+Op/oVZ7Bag86X43/AO2up03FRUcGihWkzvUHIT/i+S2mkpFxM0ntx96oTPpa8oOB/wCQNTyfR/G7/bTjsNrBtVpD9+p/oXo7dGOZA8i6ofyKn2Fv7Q/FVQefU+yOuBBdVpuaD4m3uFw5t+DmMLX8drOZUY7uKdGWS3uw0U3TBMi2C4Y5dF6kOHDq38VVec9vdXTI7tocHMrPDpJIJDbZbJJAwMY5YQa+pxF9WmWuZRmCGloIPyBAHpEeS3vB+J6l2n7ymARTi5ubnACCQCILY5TmDzXFcKompVp0x9+oxkTHxODf4r1ThDqXf1tLRpkdz/cuc4kt2MACZPwOz/075QJw/Rd6TVo9yGv+IPc9kucPERDSCNjggZ2C1fFOLO0tUt+F9MEB9IPFxMECXO+HzIjyWXxTh1VrHFlc03Mq06bQ1ocyKjmsHxS4jxTkrLGgFbTO7yo2+o0M72wutBINoZIj4TtAwMBB5gzUTU72q5xqF/eXEAguumTM3Z5RC7nRcX72oyp3VJzWtIw4UWguMkeFjwDicAFcs1go13MqFr2UalVsFsX3teOhibdjtO66Dshw4lpl72tmLmOtI8MyWkEOEziJ8+odI6o+o1wo0dHSIDi3/wCXUPuIwRLWAdJg7rk9ZxPUV6VPTNL5pWvOwghpaG+HPPIzyXSdnuD6gEtrPc+oIIAc22HgOb4ou2cNiFzPCatX7VXo1fBUvfIBBDX3uuaDDsb5HQIN12d0tR7yHE953b7A7HiIiYMOxOcc1Vx7hbatBmpc9zhWqsovbIIa4UyS8Z8LxZkbeWVpOGcd1IrWBwLxUIaXT8UhjfhcI/qZXpvbzgbBw6s1kju3HUgeEeIPuqEGJBLXP+iDgtBRc1opuLS1pEQLy0RAua20u9lpNfxKmBUdShri4iA20gzBdueU+nmkqy17KtG4h7SSCbTLSGvk3Z3GRHULqOEdkaFfVaV2RSqU2VajHEucXWPLhMQQX0nTJ2KDX9i+KUmMaajJLZbdJDmiB8JHWB8l2FKtT1tOKQAIc1wLy9zrgYGQ7oSPdZ2v4No2V2/Z2ta+xwcxrAxhti3DWtE5dJzv6LX8DNKk2sac2scWtnlDQCSAN5n5oOe/4kNDNeG1RcBQp93AM2+O443NwdlYXZiox7j3THPIBgNeWPmOVxAJ/Vdn/wAUuF/3en1V5NjxTfNuW1Mt+EA4cCP3/Vcp2U4pptExtWq4hznupkNbMsbvUAiJDgBBPMoOmpVqzqDjQBo1O9ax76x7x4yWuJc4ukhxEenRcb2i0Oo7ytqS66zV/Z3NExcaYteLnHf8yNth1Gt7VsqCsKdJ72VgJNQspmYgmGXYIjod1yfE+0b7atEmmGVq4rvFry68WwQ7p4Bj1QazR36itRpilYTUY1zmseTLnQXFuwMTsFmVeC1WVq1rXPY2o9nhIc5xa4jLbi4TbOeoVP8AzE0NtBe4dJtbvOw88rE1HG7hAZTj/qaXHbrIQdHwjR1JptfQcAHCqx7qQeY+C0kjxAZwTj2XcdmNU6oa3e0207DDC9h8QAIkDAg+64HtVqC1mkLQyDQI8Tboiq/A6DK5x3FXdKX4EHvWkpUahB7xxAJgFtogEwAC0QIWe/hrXSQ8T5YHvHxYxleCcI7zVVW0aNNj6jthAYPMkk7L0nRdh9HoqR1XELahYJcA1xot8rQJqe4jyQanXaNz9VUc+aPidaGUy4FrcBwc02k+HMHckbyFhaTT20aJrMq2ue6oAGEvZUa4tql5gEtcHAgfnAXYajjFLVsY86Q1NO8PGbJpd3bDywuHJ33SSLeaxOK9lRaH6OlppIBtqisLueHtqCPQj3QYtOsx1SmwMcGkPF5baGiWwKjXE5usGBMnYLJ1HCqs+IPIGNv1WKzs3qmvoMqN0jBWDodTOrdaW2+Eg1m8ncsYK3zexhAAdXbMZIGpEnn/APYQaV2hq7Ck/wBYB/ioOH1B8TKkf9p/0j810DOxY378+32gf56cdjWf/oq+z64/zUH/2Q==",
+
+    "tags": ["Nuclear History", "Sahara Mysteries", "Algerian Heritage"],
+    "description": "Discover Reggane: from ancient oasis to nuclear test site in Algeria's Sahara.",
+    "text": "## A Hidden Gem in the Sahara\n\nNestled deep within Algeria's vast Sahara Desert lies **Reggane**, a town that whispers tales of ancient caravans and echoes the silent aftermath of nuclear tests. This oasis, though remote, has been a silent witness to events that have shaped both local and global histories.\n\n### The Oasis of Life\n\nImagine traversing the endless dunes, the sun's relentless glare above, and then stumbling upon a haven of palm trees and shimmering water. That's Reggane—a vital stop for traders and travelers navigating the formidable Sahara. Its existence has been a beacon of hope, offering respite and resources in an otherwise unforgiving landscape.\n\n### Shadows of the Atomic Age\n\nBut Reggane's serene sands conceal a more tumultuous chapter. In the early 1960s, during Algeria's fight for independence, the French government selected this secluded locale for a series of atmospheric nuclear tests. Between 1960 and 1961, four powerful detonations pierced the desert's tranquility, forever altering its essence. The most infamous of these was **Gerboise Bleue**, detonated on February 13, 1960, marking France's entry into the nuclear club. The aftermath? Lingering radiation and a legacy of health issues for the local populace.\n\n### Resilience Amidst Adversity\n\nDespite these challenges, the spirit of Reggane's inhabitants remains unbroken. The town has transformed from a site of geopolitical machinations to a symbol of resilience. Today, visitors can explore the remnants of its past, from ancient trading routes to the haunting vestiges of its nuclear history.\n\n### Visiting Reggane Today\n\nFor the intrepid traveler, Reggane offers a journey beyond the typical tourist trail. Wander through its historic streets, engage with locals whose stories span generations, and reflect on the profound events that have left an indelible mark on this desert enclave. Remember, while the scars of the past are evident, they are a testament to the enduring strength and adaptability of Reggane's community.\n\n*Note: If you're planning a visit, always ensure to check current travel advisories and respect local guidelines.*"
+  }
+  ,
+  {
+    "title": "Bombing of Sakiet Sidi Youssef",
+    "author": "TechZone",
+    "date": "1958-02-08",
+    "image": "https://reveildalgerie.dz/FR/wp-content/uploads/2024/02/%D8%A7%D9%84%D8%B3%D8%A7%D9%82%D9%8A%D8%A9-1024x619.jpg",
+    "tags": [
+      "Sakiet Sidi Youssef",
+      "Algerian War"
+    ],
+    "description": "French airstrike on a Tunisian village, killing civilians and escalating tensions.",
+    "text": "**The Bombing of Sakiet Sidi Youssef: A Colonial Tragedy**\n\nOn **February 8, 1958**, France launched a brutal airstrike on **Sakiet Sidi Youssef**, a Tunisian village near the Algerian border. The attack was aimed at disrupting the activities of the **Algerian National Liberation Front (FLN)**, which was using Tunisia as a base for its resistance against French colonial rule. However, the bombing resulted in heavy civilian casualties, drawing international condemnation and escalating tensions between Tunisia and France.\n\nFrench warplanes targeted the village, dropping bombs on **homes, schools, and refugee camps**, killing **dozens of civilians**, including women and children. The attack came as retaliation for Tunisia’s support of Algerian independence fighters, but it also violated Tunisian sovereignty, deepening the crisis between the two nations. The **indiscriminate destruction** led to widespread outrage and strengthened international support for the Algerian independence movement.\n\nThe bombing had severe humanitarian consequences. Survivors reported scenes of devastation, with bodies scattered in the rubble and entire families wiped out. The attack also displaced many villagers, forcing them to flee their homes. The brutality of the assault intensified **anti-colonial sentiment** across North Africa and further **isolated France diplomatically**.\n\nTunisia, newly independent since 1956, condemned the attack as an **act of aggression** and took the case to the **United Nations**, calling for international intervention. The incident pressured France to reconsider its colonial policies, accelerating negotiations for Algerian independence. The bombing ultimately served as a **turning point** in the Algerian War, increasing global awareness of France’s violent repression.\n\nDespite the passage of time, the bombing of Sakiet Sidi Youssef remains a painful memory in Tunisia and Algeria. The attack symbolizes the **colonial oppression** endured by the region and continues to be a reminder of the **sacrifices made for independence**. Calls for recognition and justice persist, as the victims and their descendants seek acknowledgment of the tragedy and its lasting impact.\n\n"
+  }
+
   ]
